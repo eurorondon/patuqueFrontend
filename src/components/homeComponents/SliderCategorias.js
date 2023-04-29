@@ -16,7 +16,7 @@ const customArrow = ({ type, onClick }) => (
     onClick={onClick}
     style={{
       fontSize: "20px",
-      width: "30px",
+      width: "35px",
       height: "30px",
       lineHeight: "30px",
       textAlign: "center",
@@ -31,66 +31,79 @@ const customArrow = ({ type, onClick }) => (
   </div>
 );
 
+const categorias = [
+  {
+    title: "Skin care",
+  },
+  {
+    title: "Bases",
+  },
+  {
+    title: "Brochas",
+  },
+  {
+    title: "Bronceador",
+  },
+  {
+    title: "Skin care",
+  },
+  {
+    title: "Bases",
+  },
+  {
+    title: "Brochas",
+  },
+  {
+    title: "Bronceador",
+  },
+];
+
+const categoria = categorias
+  ? categorias.map((item) => (
+      <Link
+        className=""
+        to={`/products/${item.title}`}
+        style={{
+          width: "100%",
+          gap: "1px",
+          margin: "0 1px",
+          fontSize: "15px",
+          fontWeight: "600",
+        }}
+      >
+        <div
+          className="  d-flex justify-content-center align-items-center rounded  "
+          style={{
+            height: "50px",
+            width: "100%",
+
+            backgroundColor: "#D8D8F0",
+
+            // margin: "0 2px",
+          }}
+        >
+          {item.title}
+        </div>
+      </Link>
+    ))
+  : null;
+
 const SliderCategorias = () => {
   return (
     <div className="mx-1">
       {window.innerWidth < 767 ? (
         <div>
-          <h2 className="mt-5 text-center">Categorias</h2>
+          <h2 className="mt-5 mb-1 text-center">Categorias</h2>
+          <div className="d-flex justify-content-center">
+            <a className="text-center mx-auto block">Ver todas</a>
+          </div>
           <Carousel
             breakPoints={breakPoints}
             itemsToShow={3}
             itemsToScroll={3}
             renderArrow={customArrow}
           >
-            <div
-              className=" text-dark d-flex justify-content-center align-items-center "
-              style={{ height: "50px", width: "100%", margin: "0 2px" }}
-            >
-              Skin care
-            </div>
-            <div
-              className="text-dark d-flex justify-content-center align-items-center "
-              style={{ height: "50px", width: "100%", margin: "0 2px" }}
-            >
-              Bases
-            </div>
-            <div
-              className="text-dark d-flex justify-content-center align-items-center "
-              style={{ height: "50px", width: "100%", margin: "0 2px" }}
-            >
-              Brochas
-            </div>
-            <div
-              className="text-dark d-flex justify-content-center align-items-center "
-              style={{ height: "50px", width: "100%", margin: "0 2px" }}
-            >
-              Bronceador
-            </div>
-            <div
-              className="text-dark d-flex justify-content-center align-items-center "
-              style={{ height: "50px", width: "100%", margin: "0 2px" }}
-            >
-              uno
-            </div>
-            <div
-              className="text-dark d-flex justify-content-center align-items-center "
-              style={{ height: "50px", width: "100%", margin: "0 3px" }}
-            >
-              uno
-            </div>
-            <div
-              className="text-dark d-flex justify-content-center align-items-center "
-              style={{ height: "50px", width: "100%", margin: "0 3px" }}
-            >
-              uno
-            </div>
-            <div
-              className="bg-dark text-white d-flex justify-content-center align-items-center mx-1"
-              style={{ height: "50px", width: "100%" }}
-            >
-              uno
-            </div>
+            {categoria}
           </Carousel>
         </div>
       ) : null}
