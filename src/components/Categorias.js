@@ -67,6 +67,8 @@ function Categorias() {
               position: "relative",
               borderRadius: "15px",
               backgroundColor: "rgba(155, 156, 207, 0.08)",
+              border: "solid 1px #6768A9",
+              boxShadow: "2px 2px 4px rgba(0, 0, 0, 0.3)",
             }}
           >
             <div

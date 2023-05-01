@@ -1,6 +1,5 @@
 import React from "react";
 import Carousel from "react-elastic-carousel";
-import "react-multi-carousel/lib/styles.css";
 import { Link } from "react-router-dom";
 
 const breakPoints = [
@@ -20,7 +19,6 @@ const customArrow = ({ type, onClick }) => (
       height: "30px",
       lineHeight: "30px",
       textAlign: "center",
-
       backgroundColor: "#6768A9",
       color: "#fff",
       cursor: "pointer",
@@ -66,20 +64,19 @@ const categoria = categorias
         style={{
           width: "100%",
           gap: "1px",
-          margin: "0 1px",
+          margin: "0 0px",
           fontSize: "15px",
           fontWeight: "600",
         }}
       >
         <div
-          className="  d-flex justify-content-center align-items-center rounded  "
+          className="  d-flex justify-content-center align-items-center rounded   "
           style={{
             height: "50px",
             width: "100%",
-
             backgroundColor: "#D8D8F0",
 
-            // margin: "0 2px",
+            margin: "0 2px",
           }}
         >
           {item.title}

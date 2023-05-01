@@ -86,8 +86,8 @@ textarea:focus {
 }
 .badge {
   background-color: red;
-  position: absolute;
-  top: -20px;
+  /* position: absolute; */
+  top: -5px;
   border-radius: 100px;
   padding: 5px 7px;
   font-size: 12px;
@@ -181,6 +181,7 @@ textarea:focus {
 
 .button:hover {
   background-color: #000000;
+  color: #fff
   /* border-radius: 1px; */
 }
 
@@ -213,7 +214,7 @@ textarea:focus {
 @media screen and (max-width: 768px) {
 
   .Announcement {
-    
+    position: relative;
     padding: 10px  ;
   }
 }
@@ -1208,3 +1209,23 @@ svg {
     max-width: 33.33%;
   }
 }
+
+
+/* editar botones react-elastic-carousel */
+button.rec-dot{
+
+  width: 6px;
+  height: 6px;
+  
+}
+
+
+/* .navbar-toggler:focus {
+  outline: 1px solid transparent;
+}
+
+
+.navbar-toggler:focus {
+  outline: none;
+} */
+

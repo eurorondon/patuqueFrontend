@@ -9,7 +9,7 @@ export default function Product(props) {
   return (
     <div className=" carousel-card   " style={{}}>
       <div
-        className=""
+        className=" card    "
         style={
           window.innerWidth > 767
             ? {

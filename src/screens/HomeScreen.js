@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Header from "./../components/Header";
-// import ShopSection from "./../components/homeComponents/ShopSection";
+import ShopSection from "./../components/homeComponents/ShopSection";
+import Oferta from "../components/homeComponents/Oferta";
 import ContactInfo from "./../components/homeComponents/ContactInfo";
 import CalltoActionSection from "./../components/homeComponents/CalltoActionSection";
 import Footer from "./../components/Footer";
@@ -15,8 +16,9 @@ import CarrucelCategoria3 from "../components/CarrucelCategoria3";
 import { Undo } from "@material-ui/icons";
 import PatuqueImage from "../components/homeComponents/PatuqueImage";
 import Menu from "../components/homeComponents/Menu";
-// import Oferta from "../components/homeComponents/Oferta";
 import SliderCategorias from "../components/homeComponents/SliderCategorias";
+import ElasticCaruselLoMasNuevo from "../components/homeComponents/ElasticCaruselLoMasNuevo";
+import Navbar from "../components/Navbar";
 
 const HomeScreen = ({ match }) => {
   window.scrollTo(0, 0);
@@ -35,6 +37,7 @@ const HomeScreen = ({ match }) => {
   const [currentPage, setCurrentPage] = useState(0);
   return (
     <div className="" style={{ backgroundColor: "" }}>
+      <Navbar />
       <Header setCurrentPage={setCurrentPage} />
       {currentPath == "/" ? null : (
         <div className="mt-3 ms-3">
@@ -49,30 +52,31 @@ const HomeScreen = ({ match }) => {
       <PatuqueImage setCurrentPage={setCurrentPage} />
       <Menu />
       <SliderCategorias />
-      {currentPath == "/" ? <CarrucelCategoria1 /> : null}
+      <ElasticCaruselLoMasNuevo />
+      {/* {currentPath == "/" ? <CarrucelCategoria1 /> : null} */}
       {currentPath == "/" ? <Categorias /> : null}
       {/* {currentPath == "/" ? <CalltoActionSection /> : null} */}
       {/* {currentPath == "/" ? <Tarjetas /> : null} */}
       {/* {currentPath == "/" ? <CarrucelCategoria2 /> : null}
       {currentPath == "/" ? <CarrucelCategoria3 /> : null} */}
 
-      {/* {currentPath !== "" ? (
+      {currentPath !== "" ? (
         <Oferta
           keyword={keyword}
           pagenumber={pagenumber}
           currentPage={currentPage}
           setCurrentPage={setCurrentPage}
         />
-      ) : null} */}
+      ) : null}
 
-      {/* {currentPath !== "" ? (
+      {currentPath !== "" ? (
         <ShopSection
           keyword={keyword}
           pagenumber={pagenumber}
           currentPage={currentPage}
           setCurrentPage={setCurrentPage}
         />
-      ) : null} */}
+      ) : null}
 
       <ContactInfo />
       <Footer />

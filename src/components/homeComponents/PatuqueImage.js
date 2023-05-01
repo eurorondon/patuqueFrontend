@@ -130,7 +130,9 @@ const PatuqueImage = ({ setCurrentPage }) => {
           >
             <Link to="/cart" className="cart-mobile-icon">
               <i className="fas fa-shopping-bag"></i>
-              <span className="badge">{cartItems.length}</span>
+              <span className="badge" style={{ position: "absolute" }}>
+                {cartItems.length}
+              </span>
             </Link>
           </div>
         </div>

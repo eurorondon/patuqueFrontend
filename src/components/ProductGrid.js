@@ -25,16 +25,23 @@ export default function Product(props) {
       </div>
 
       <div className="p-2" style={{ backgroundColor: "" }}>
-        <h5 className="name" style={{ fontWeight: "bold", color: "#00789D" }}>
+        <h5
+          className=""
+          style={{
+            fontWeight: "bold",
+            color: "#00789D",
+            fontSize: "clamp(1rem, 2vw, 1.4rem)",
+          }}
+        >
           {props.name.length > MAX_TITLE_LENGTH
             ? props.name.substring(0, MAX_TITLE_LENGTH) + "..."
             : props.name}
         </h5>
         <div
           className="my-2"
-          style={
-            window.innerWidth > 767 ? { height: "50px" } : { height: "40px" }
-          }
+          // style={
+          //   window.innerWidth > 767 ? { height: "50px" } : { height: "40px" }
+          // }
         >
           {props.description ? (
             <p className="description">

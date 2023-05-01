@@ -52,7 +52,7 @@ const Header = ({ setCurrentPage }) => {
       <div className=" pc-header">
         <div className=" Announcement  ">
           <div className="mx-4">
-            <div className="row">
+            <div className="row  " style={{ position: "relative" }}>
               <div className=" col-3 d-flex  align-items-center justify-content-start   ">
                 <form onSubmit={submitHandler} className="input-group">
                   {/* <form className="input-group"> */}
@@ -105,20 +105,22 @@ const Header = ({ setCurrentPage }) => {
                     </div>
                   </div>
                 ) : (
-                  <>
-                    <Link to="/register" className=" button text-white my-auto">
-                      Registrar
+                  <div className="text-black">
+                    <Link to="/register" className=" button  my-auto ">
+                      <span className=""> Registrar</span>
                     </Link>
-                    <Link to="/login" className=" button text-white my-auto">
+                    <Link to="/login" className=" button my-auto">
                       Login
                     </Link>
-                  </>
+                  </div>
                 )}
 
                 <Link to="/cart">
-                  <ShoppingCart className="text-white" />
+                  <ShoppingCart className="text-black" />
                   {/* <i className="fas fa-shopping-bag text-white"></i> */}
-                  <span className="badge">{cartItems.length}</span>
+                  <span className="badge" style={{ position: "absolute" }}>
+                    {cartItems.length}
+                  </span>
                 </Link>
               </div>
             </div>
@@ -135,7 +137,7 @@ const Header = ({ setCurrentPage }) => {
               <div className="col d-flex   align-items-center justify-content-center">
                 <h2
                   style={{
-                    fontSize: "clamp(1rem, 2.2vw, 1.5rem)",
+                    fontSize: "clamp(0.8rem, 3vw, 1.5rem)",
                   }}
                 >
                   ¡Bienvenidas! Encuentra todo aquí
