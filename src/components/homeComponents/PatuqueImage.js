@@ -6,6 +6,7 @@ import { Link, useHistory, useParams } from "react-router-dom";
 import "../../responsive.css";
 
 const PatuqueImage = ({ setCurrentPage }) => {
+  let history = useHistory();
   const userLogin = useSelector((state) => state.userLogin);
   const { userInfo } = userLogin;
 

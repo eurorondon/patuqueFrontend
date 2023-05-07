@@ -71,7 +71,7 @@ const categoria = categorias
           style={{
             height: "50px",
             width: "100%",
-            backgroundColor: "#D8D8F0",
+            // backgroundColor: "#D8D8F0",
 
             margin: "0 2px",
           }}

@@ -4,9 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { listProductCategoria2 } from "../../Redux/Actions/ProductActions";
 import Loading from "../LoadingError/Loading";
 import Message from "../LoadingError/Error";
-
-import ReactPaginate from "react-paginate";
-import { ArrowBack, ArrowForward, Search } from "@material-ui/icons";
+import { Search } from "@material-ui/icons";
 import GridOfertas from "../GridOfertas";
 
 const Oferta = (props) => {
@@ -27,31 +25,6 @@ const Oferta = (props) => {
     dispatch(listProductCategoria2(category));
   }, [dispatch, category]);
 
-  // AQUI EMPIEZA FUNCIONES DE PAGINACION
-
-  useEffect(() => {
-    localStorage.setItem("currentPage", JSON.stringify(currentPage));
-  }, [currentPage]);
-
-  const url = window.location.href;
-  const match = url.match(/\d+$/);
-
-  useEffect(() => {
-    if (url.includes("page")) {
-      const match = url.match(/\d+$/);
-      setCurrentPage(match[0] * 1);
-    }
-  }, []);
-
-  const handlePageClick = (data) => {
-    const selectedPage = data.selected;
-    setCurrentPage(selectedPage);
-    // scroll(0, 0);
-    history.push(`?page=${selectedPage}`);
-  };
-
-  //AQUI TERMINA FUNCIONES DE PAGINACION
-
   const handleCategoria = (e) => {
     const value = e.target.value;
     setSelectedCategory(value);
@@ -62,25 +35,6 @@ const Oferta = (props) => {
       setCurrentPage(0); // reseteamos la página al cambiar de categoría
     }
   };
-
-  const handleButtonCategoria = (e) => {
-    const value = e.target.value;
-    setSelectedCategory(value);
-    if (value === "") {
-      history.push(`/`);
-    } else {
-      history.push(`/category/${value}`);
-      setCurrentPage(0); // reseteamos la página al cambiar de categoría
-    }
-  };
-
-  const handleGoBack = () => {
-    history.push(`/`);
-    setSelectedCategory("");
-    setCurrentPage(0);
-  };
-
-  const currentPath = history.location.pathname;
 
   return (
     <>
@@ -94,12 +48,6 @@ const Oferta = (props) => {
           <Message variant="alert-danger">{error}</Message>
         ) : (
           <>
-            {/* {!category ? null : (
-              <button className="btn btn-primary" onClick={handleGoBack}>
-                Volver Atrás
-              </button>
-            )} */}
-
             {!category ? (
               <div
                 className={
@@ -129,13 +77,11 @@ const Oferta = (props) => {
                       <h2>
                         Sin Resultados <Search style={{ fontSize: "2rem" }} />
                       </h2>
-
                       <div className=" ">
                         <p className="my-3" style={{ fontSize: "1.3rem" }}>
                           Puedes intentar con otro Nombre o buscar en alguna de
                           nuestras Categorias
                         </p>
-
                         <div className=" d-flex justify-content-center mt-3">
                           <select
                             name="categoria"
@@ -147,7 +93,6 @@ const Oferta = (props) => {
                                 ? selectedCategory
                                 : "Categoria"}
                             </option>
-
                             <option value="Conservadores">Conservadores</option>
                             <option value="Vasos">Vasos</option>
                             <option value="Poncheras">Poncheras</option>
