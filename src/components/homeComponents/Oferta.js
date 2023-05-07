@@ -39,7 +39,15 @@ const Oferta = (props) => {
   return (
     <>
       {/* <Grid /> */}
-      <div className="">
+      <div
+        className={
+          window.innerWidth > 1400
+            ? " mx-5  mt-4"
+            : window.innerWidth > 1000
+            ? "container mt-4"
+            : " mt-4"
+        }
+      >
         {loading ? (
           <div className="" style={{ margin: "200px 0px" }}>
             <Loading />
@@ -148,7 +156,9 @@ const Oferta = (props) => {
                 </div>
               </div>
             )}
-            <GridOfertas products={products} />
+            <div className=" ">
+              <GridOfertas products={products} />
+            </div>
           </>
         )}
       </div>

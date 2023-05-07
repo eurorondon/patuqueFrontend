@@ -48,15 +48,18 @@ function Categorias() {
 
   return (
     <div
-      className={window.innerWidth > 768 ? "mx-5 my-5" : "container mt-5 mb-2"}
+      className={
+        window.innerWidth > 1280 ? "  mx-auto  mt-4" : "  container mt-4"
+      }
     >
       <h2 className="text-center my-4">DESTACADOS</h2>
+
       {/* <div className="row  row-cols-md-3 row-cols-lg-6 row-cols-xl-6 d-flex justify-content-center gap-2"> */}
       <div
         className={
           window.innerWidth > 768
-            ? "row  row-cols-md-3 row-cols-lg-6 row-cols-xl-6 d-flex justify-content-center gap-3"
-            : "row  row-cols-md-3 row-cols-lg-6 row-cols-xl-6 d-flex justify-content-center gap-5 mx-4 "
+            ? "grid3"
+            : "row  row-cols-md-3 row-cols-lg-6 row-cols-xl-6 d-flex justify-content-center gap-4 mx-4 "
         }
       >
         {categorias.map((categoria, index) => (

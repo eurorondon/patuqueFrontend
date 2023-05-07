@@ -130,7 +130,15 @@ const ShopSection = (props) => {
   return (
     <>
       {/* <Grid /> */}
-      <div className="">
+      <div
+        className={
+          window.innerWidth > 1400
+            ? " mx-5  mt-4"
+            : window.innerWidth > 1000
+            ? "container mt-4"
+            : " mt-4"
+        }
+      >
         {loading ? (
           <div className="" style={{ margin: "200px 0px" }}>
             <Loading />
@@ -146,11 +154,7 @@ const ShopSection = (props) => {
             )} */}
 
             {!category ? (
-              <div
-                className={
-                  window.innerWidth > 1240 ? "ms-5  mt-4" : "container mt-4"
-                }
-              >
+              <div>
                 {products?.length > 0 ? (
                   <>
                     <div className="d-flex  align-items-center">
@@ -244,7 +248,6 @@ const ShopSection = (props) => {
             ) : (
               <div
                 className={window.innerWidth > 1240 ? "ms-5  mt-4" : " mt-4"}
-                container
               >
                 <div className="d-flex  align-items-center">
                   <h2 className="me-4">{category}</h2>

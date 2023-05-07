@@ -30,7 +30,7 @@ const GridOfertas = ({ products }) => {
         className={window.innerWidth > 767 ? "mb-5 mx-5" : "container"}
         style={{}}
       >
-        <div className="grid my-2">{product}</div>
+        <div className=" grid2 my-2">{product}</div>
       </div>
     </>
   );

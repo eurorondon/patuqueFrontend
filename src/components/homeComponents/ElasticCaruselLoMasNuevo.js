@@ -16,7 +16,7 @@ import Carousel from "react-elastic-carousel";
 const breakPoints = [
   // { width: 1, itemsToShow: 1 },
   { width: 320, itemsToShow: 1, itemsToScroll: 1 },
-  { width: 480, itemsToShow: 2, itemsToScroll: 2 },
+  { width: 480, itemsToShow: 3, itemsToScroll: 1 },
   { width: 768, itemsToShow: 4, itemsToScroll: 4 },
   { width: 992, itemsToShow: 5, itemsToScroll: 5 },
   { width: 1200, itemsToShow: 6, itemsToScroll: 6 },
@@ -73,7 +73,7 @@ const ElasticCaruselLoMasNuevo = () => {
       ))
     : null;
   return (
-    <>
+    <div className={window.innerWidth > 1280 ? "   mt-4" : "container mt-4"}>
       {products && products.length > 1 ? (
         <div className={window.innerWidth > 1240 ? "mx-5" : "container"}>
           {/* <div className={window.innerWidth > 1240 ? "container" : "container"}> */}
@@ -96,7 +96,7 @@ const ElasticCaruselLoMasNuevo = () => {
           <Loading className="" />
         </div>
       )}
-    </>
+    </div>
   );
 };
 
