@@ -5,11 +5,11 @@ const Navbar = () => {
     return (
       <div className=" " style={{ backgroundColor: "#6768A9" }}>
         <nav
-          class="navbar navbar-expand-lg navbar-dark  py-4 "
+          className="navbar navbar-expand-lg navbar-dark  py-4 "
           style={{ position: "relative" }}
         >
           <button
-            class=" ms-2"
+            className=" ms-2"
             type="button"
             data-toggle="collapse"
             data-target="#navbarSupportedContent"
@@ -25,7 +25,7 @@ const Navbar = () => {
               fontSize: "20px",
             }}
           >
-            <span class="navbar-toggler-icon"></span>
+            <span className="navbar-toggler-icon"></span>
           </button>
           <h3
             className="text-center mx-auto text-white"
@@ -33,28 +33,28 @@ const Navbar = () => {
           >
             CONTACTANOS +58 412 5263763
           </h3>
-          {/* <a class="navbar-brand" href="#">
+          {/* <a className="navbar-brand" href="#">
             Navbar
           </a> */}
 
           <div
-            class="collapse navbar-collapse pt-3 ms-3"
+            className="collapse navbar-collapse pt-3 ms-3"
             id="navbarSupportedContent"
           >
-            <ul class="navbar-nav mr-auto">
-              <li class="nav-item active">
-                <a class="nav-link" href="#">
-                  Home <span class="sr-only">(current)</span>
+            <ul className="navbar-nav mr-auto">
+              <li className="nav-item active">
+                <a className="nav-link" href="#">
+                  Home <span className="sr-only">(current)</span>
                 </a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
+              <li className="nav-item">
+                <a className="nav-link" href="#">
                   Link
                 </a>
               </li>
-              <li class="nav-item dropdown">
+              <li className="nav-item dropdown">
                 <a
-                  class="nav-link dropdown-toggle"
+                  className="nav-link dropdown-toggle"
                   href="#"
                   id="navbarDropdown"
                   role="button"
@@ -64,21 +64,21 @@ const Navbar = () => {
                 >
                   Dropdown
                 </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="#">
+                <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a className="dropdown-item" href="#">
                     Action
                   </a>
-                  <a class="dropdown-item" href="#">
+                  <a className="dropdown-item" href="#">
                     Another action
                   </a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="#">
+                  <div className="dropdown-divider"></div>
+                  <a className="dropdown-item" href="#">
                     Something else here
                   </a>
                 </div>
               </li>
-              <li class="nav-item">
-                <a class="nav-link disabled" href="#">
+              <li className="nav-item">
+                <a className="nav-link disabled" href="#">
                   Disabled
                 </a>
               </li>

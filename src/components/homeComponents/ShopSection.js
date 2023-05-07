@@ -201,7 +201,7 @@ const ShopSection = (props) => {
                             id=""
                             onChange={handleCategoria}
                           >
-                            <option disabled selected value="">
+                            <option disabled defaultValue="">
                               {selectedCategory
                                 ? selectedCategory
                                 : "Categoria"}

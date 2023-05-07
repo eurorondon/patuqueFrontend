@@ -32,33 +32,30 @@ const customArrow = ({ type, onClick }) => (
 const categorias = [
   {
     title: "Skin care",
+    id: 1,
   },
   {
     title: "Bases",
+    id: 2,
   },
   {
     title: "Brochas",
+    id: 3,
   },
   {
     title: "Bronceador",
+    id: 4,
   },
   {
     title: "Skin care",
-  },
-  {
-    title: "Bases",
-  },
-  {
-    title: "Brochas",
-  },
-  {
-    title: "Bronceador",
+    id: 5,
   },
 ];
 
 const categoria = categorias
   ? categorias.map((item) => (
       <Link
+        key={item.id}
         className=""
         to={`/products/${item.title}`}
         style={{

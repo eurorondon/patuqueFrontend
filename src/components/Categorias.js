@@ -85,7 +85,7 @@ function Categorias() {
               />
             </div>
             <div className="text-center my-2">
-              <text className="categoria-name">ver mas</text>
+              <span className="categoria-name">ver mas</span>
             </div>
           </div>
         ))}

@@ -41,38 +41,38 @@ const Footer = () => {
         <section className="">
           <div className="container text-center text-md-start mt-5">
             {/* <!-- Grid row --> */}
-            <div class="row mt-3">
+            <div className="row mt-3">
               {/* <!-- Grid column --> */}
-              <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+              <div className="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
                 {/* <!-- Content --> */}
-                <h6 class="text-uppercase fw-bold mb-4">
-                  <i class=""></i>Lara Hogar Plastic
+                <h6 className="text-uppercase fw-bold mb-4">
+                  <i className=""></i>Lara Hogar Plastic
                 </h6>
                 <p>Carrera 23 entre calle 37 y 38, Barquisimeto 3001</p>
               </div>
               {/* <!-- Grid column --> */}
 
               {/* <!-- Grid column --> */}
-              <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+              <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
                 {/* <!-- Links --> */}
-                <h6 class="text-uppercase fw-bold mb-4">Productos</h6>
+                <h6 className="text-uppercase fw-bold mb-4">Productos</h6>
                 <p>
-                  <a href="#!" class="text-reset">
+                  <a href="#!" className="text-reset">
                     Cocina
                   </a>
                 </p>
                 <p>
-                  <a href="#!" class="text-reset">
+                  <a href="#!" className="text-reset">
                     Limpieza
                   </a>
                 </p>
                 <p>
-                  <a href="#!" class="text-reset">
+                  <a href="#!" className="text-reset">
                     Aluminio
                   </a>
                 </p>
                 <p>
-                  <a href="#!" class="text-reset">
+                  <a href="#!" className="text-reset">
                     Contenedores
                   </a>
                 </p>
@@ -107,19 +107,19 @@ const Footer = () => {
               {/* <!-- Grid column --> */}
 
               {/* <!-- Grid column --> */}
-              <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+              <div className="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
                 {/* <!-- Links --> */}
-                <h6 class="text-uppercase fw-bold mb-4">Contacto</h6>
+                <h6 className="text-uppercase fw-bold mb-4">Contacto</h6>
                 <p>
-                  <i class="fas fa-home me-3"></i> Carrera 23 entre calle 37 y
-                  38, Barquisimeto 3001
+                  <i className="fas fa-home me-3"></i> Carrera 23 entre calle 37
+                  y 38, Barquisimeto 3001
                 </p>
                 <p>
-                  <i class="fas fa-envelope me-3"></i>
+                  <i className="fas fa-envelope me-3"></i>
                   larahogarplastic@gmail.com
                 </p>
                 <p>
-                  <i class="fas fa-phone me-3"></i> +58 412 6022 881
+                  <i className="fas fa-phone me-3"></i> +58 412 6022 881
                 </p>
                 {/* <p>
                   <i class="fas fa-print me-3"></i> +58 412 6022 881
@@ -134,11 +134,11 @@ const Footer = () => {
 
         {/* <!-- Copyright --> */}
         <div
-          class="text-center p-4"
+          className="text-center p-4"
           // style="background-color: rgba(0, 0, 0, 0.05);"
         >
           © 2023 Copyright:
-          <a class="text-reset fw-bold" href="#">
+          <a className="text-reset fw-bold" href="#">
             larahogarplastic.com
           </a>
         </div>
