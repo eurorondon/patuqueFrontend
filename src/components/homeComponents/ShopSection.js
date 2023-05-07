@@ -34,30 +34,26 @@ const ShopSection = (props) => {
 
   useEffect(() => {
     // Función que se ejecuta al inicio para establecer el valor inicial, esta funcion es para variar la cantidad de tarjetas o productos que se muestran dependeiendo del responsive o query screen
-
-    function handleResize() {
-      if (window.innerWidth > 1615) {
-        setPostsPerPage(14);
-      }
-      if (window.innerWidth < 1726) {
-        setPostsPerPage(12);
-      }
-      if (window.innerWidth < 1491) {
-        setPostsPerPage(10);
-      }
-      if (window.innerWidth < 1256) {
-        setPostsPerPage(12);
-      }
-    }
-
+    // function handleResize() {
+    //   if (window.innerWidth > 1615) {
+    //     setPostsPerPage(14);
+    //   }
+    //   if (window.innerWidth < 1726) {
+    //     setPostsPerPage(12);
+    //   }
+    //   if (window.innerWidth < 1491) {
+    //     setPostsPerPage(10);
+    //   }
+    //   if (window.innerWidth < 1256) {
+    //     setPostsPerPage(12);
+    //   }
+    // }
     // function handleCategoryFromUrl() {
     //   const { category } = useParams();
     //   setSelectedCategory(category || ""); // establecer la categoría si existe en la URL
     // }
-
-    handleResize(); // Llamamos a la función al inicio
-
-    window.addEventListener("resize", handleResize); // Agregamos el event listener
+    // handleResize();
+    // window.addEventListener("resize", handleResize);
   }, []);
 
   // AQUI EMPIEZA FUNCIONES DE PAGINACION
@@ -247,9 +243,8 @@ const ShopSection = (props) => {
               </div>
             ) : (
               <div
-                className={
-                  window.innerWidth > 1240 ? "ms-5  mt-4" : "container mt-4"
-                }
+                className={window.innerWidth > 1240 ? "ms-5  mt-4" : " mt-4"}
+                container
               >
                 <div className="d-flex  align-items-center">
                   <h2 className="me-4">{category}</h2>

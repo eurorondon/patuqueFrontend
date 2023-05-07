@@ -222,8 +222,9 @@ textarea:focus {
 .grid {
   display: grid;
   /* la siguiente linea se debe cambiar para responsive */
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  grid-gap: 15px;
+  /* grid-template-columns: repeat(auto-fit, minmax(330px, 1fr)); */
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 20px;
   /* grid-row-gap: 25px; */
 
   /* grid-auto-rows: 350px; */
@@ -281,6 +282,14 @@ textarea:focus {
   color: #393939;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
+}
+
+@media (max-width: 1000px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 5px;
+    /* grid-auto-rows: 290px; */
+  }
 }
 
 @media (max-width: 650px) {
