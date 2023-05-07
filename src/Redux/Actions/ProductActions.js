@@ -26,18 +26,19 @@ import { logout } from "./userActions";
 export const listProduct =
   (keyword = "", pageNumber = "", category = "") =>
   async (dispatch) => {
-    console.log(category);
     try {
       dispatch({ type: PRODUCT_LIST_REQUEST });
 
       if (!category) {
         const { data } = await axios.get(
           `${URL}/api/products?keyword=${keyword}&pageNumber=${pageNumber}`,
+
           console.log(
             "SIN CATEGORIAS",
             `${URL}/api/products?keyword=${keyword}&pageNumber=${pageNumber}`
           )
         );
+        console.log(data);
 
         dispatch({ type: PRODUCT_LIST_SUCCESS, payload: data });
       } else {

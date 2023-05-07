@@ -9,24 +9,28 @@ import ReactPaginate from "react-paginate";
 import { ArrowBack, ArrowForward, Search } from "@material-ui/icons";
 
 const ShopSection = (props) => {
-  const { keyword, pagenumber, setCurrentPage, currentPage } = props;
+  const { keyword, setCurrentPage, currentPage } = props;
+
   const dispatch = useDispatch();
 
   const productList = useSelector((state) => state.productList);
   const { loading, error, products, page, pages } = productList;
+  console.log([products]);
   const [selectedCategory, setSelectedCategory] = useState();
   const { category } = useParams();
+
+  // console.log(pages);
 
   let history = useHistory();
   const [postsPerPage, setPostsPerPage] = useState(12);
   const indexOfLastPost = (currentPage + 1) * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
   const currentPosts = products?.slice(indexOfFirstPost, indexOfLastPost);
-  const totalPosts = products.length;
+  const totalPosts = products?.length;
 
   useEffect(() => {
     dispatch(listProduct(keyword, currentPage, category));
-  }, [dispatch, keyword, pagenumber, category, currentPage]);
+  }, [dispatch, keyword, category, currentPage]);
 
   useEffect(() => {
     // Función que se ejecuta al inicio para establecer el valor inicial, esta funcion es para variar la cantidad de tarjetas o productos que se muestran dependeiendo del responsive o query screen
@@ -87,6 +91,13 @@ const ShopSection = (props) => {
     // scroll(0, 0);
     history.push(`?page=${selectedPage}`);
   };
+  // console.log(currentPage);
+
+  // useEffect(() => {
+  //   dispatch(listProduct(keyword, currentPage, category));
+  // }, [currentPage]);
+
+  // console.log(page);
 
   //AQUI TERMINA FUNCIONES DE PAGINACION
 
@@ -144,7 +155,7 @@ const ShopSection = (props) => {
                   window.innerWidth > 1240 ? "ms-5  mt-4" : "container mt-4"
                 }
               >
-                {currentPosts?.length > 0 ? (
+                {products?.length > 0 ? (
                   <>
                     <div className="d-flex  align-items-center">
                       {keyword ? (
@@ -262,17 +273,17 @@ const ShopSection = (props) => {
                 </div>
               </div>
             )}
-            <Grid currentPosts={currentPosts} />
+            <Grid currentPosts={products} />
           </>
         )}
 
-        {currentPosts?.length > 0 ? (
+        {products?.length > 0 ? (
           <ReactPaginate
             previousLabel={<ArrowBack />}
             nextLabel={<ArrowForward />}
-            totalPosts={products.length}
-            pageCount={Math.ceil(totalPosts / postsPerPage)}
-            marginPagesDisplayed={1}
+            // totalPosts={products.length}
+            pageCount={pages}
+            // marginPagesDisplayed={1}
             pageRangeDisplayed={2} // Aquí estableces el número de botones de página a mostrar
             onPageChange={handlePageClick}
             containerClassName={"pagination"}
