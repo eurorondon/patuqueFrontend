@@ -1,75 +1,37 @@
 import React, { useEffect, useState } from "react";
 import { useHistory, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { listProduct } from "../../Redux/Actions/ProductActions";
+import { listProductCategoria2 } from "../../Redux/Actions/ProductActions";
 import Loading from "../LoadingError/Loading";
 import Message from "../LoadingError/Error";
-import Grid from "../Grid";
+
 import ReactPaginate from "react-paginate";
 import { ArrowBack, ArrowForward, Search } from "@material-ui/icons";
+import GridOfertas from "../GridOfertas";
 
 const Oferta = (props) => {
-  const { keyword, pagenumber, setCurrentPage, currentPage } = props;
+  const { keyword, setCurrentPage, currentPage } = props;
   const dispatch = useDispatch();
 
-  const productList = useSelector((state) => state.productList);
-  const { loading, error, products, page, pages } = productList;
+  const productListCategoria2 = useSelector(
+    (state) => state.productListCategoria2
+  );
+
+  const { loading, error, products, page, pages } = productListCategoria2;
   const [selectedCategory, setSelectedCategory] = useState();
   const { category } = useParams();
 
   let history = useHistory();
-  const [postsPerPage, setPostsPerPage] = useState(12);
-  const indexOfLastPost = (currentPage + 1) * postsPerPage;
-  const indexOfFirstPost = indexOfLastPost - postsPerPage;
-  const currentPosts = products?.slice(indexOfFirstPost, indexOfLastPost);
-  const totalPosts = products.length;
 
   useEffect(() => {
-    dispatch(listProduct(keyword, currentPage, category));
-  }, [dispatch, keyword, pagenumber, category, currentPage]);
-
-  useEffect(() => {
-    // Función que se ejecuta al inicio para establecer el valor inicial, esta funcion es para variar la cantidad de tarjetas o productos que se muestran dependeiendo del responsive o query screen
-
-    function handleResize() {
-      if (window.innerWidth > 1615) {
-        setPostsPerPage(14);
-      }
-      if (window.innerWidth < 1726) {
-        setPostsPerPage(12);
-      }
-      if (window.innerWidth < 1491) {
-        setPostsPerPage(10);
-      }
-      if (window.innerWidth < 1256) {
-        setPostsPerPage(12);
-      }
-    }
-
-    // function handleCategoryFromUrl() {
-    //   const { category } = useParams();
-    //   setSelectedCategory(category || ""); // establecer la categoría si existe en la URL
-    // }
-
-    handleResize(); // Llamamos a la función al inicio
-
-    window.addEventListener("resize", handleResize); // Agregamos el event listener
-  }, []);
+    dispatch(listProductCategoria2(category));
+  }, [dispatch, category]);
 
   // AQUI EMPIEZA FUNCIONES DE PAGINACION
 
   useEffect(() => {
     localStorage.setItem("currentPage", JSON.stringify(currentPage));
   }, [currentPage]);
-
-  // useEffect(() => {
-  //   const storedPage = localStorage.getItem("currentPage");
-  //   if (storedPage) {
-  //     setCurrentPage(JSON.parse(storedPage));
-  //   } else {
-  //     setCurrentPage(location.state?.currentPage || 0);
-  //   }
-  // }, [location.state?.currentPage]);
 
   const url = window.location.href;
   const match = url.match(/\d+$/);
@@ -144,7 +106,7 @@ const Oferta = (props) => {
                   window.innerWidth > 1240 ? "ms-5  mt-4" : "container mt-4"
                 }
               >
-                {currentPosts?.length > 0 ? (
+                {products?.length > 0 ? (
                   <>
                     <div className="d-flex  align-items-center">
                       {keyword ? (
@@ -159,27 +121,6 @@ const Oferta = (props) => {
                           <h2 className="">OFERTAS </h2>
                         </div>
                       )}
-                      {/* <div>
-                        <select
-                          name="categoria"
-                          id=""
-                          onChange={handleCategoria}
-                        >
-                          <option disabled selected value="">
-                            {selectedCategory ? selectedCategory : "Categoria"}
-                          </option>
-
-                          <option value="Conservadores">Conservadores</option>
-                          <option value="Vasos">Vasos</option>
-                          <option value="Poncheras">Poncheras</option>
-                          <option value="Aluminio">Aluminio</option>
-                          <option value="Tobos">Tobos</option>
-                          <option value="Bigmark">Bigmark</option>
-                          <option value="Inplast">Inplast</option>
-                          <option value="Adonis">Adonis</option>
-                          <option value="IPM">IPM</option>
-                        </select>
-                      </div> */}
                     </div>
                   </>
                 ) : (
@@ -262,24 +203,9 @@ const Oferta = (props) => {
                 </div>
               </div>
             )}
-            <Grid currentPosts={currentPosts} />
+            <GridOfertas products={products} />
           </>
         )}
-
-        {/* {currentPosts?.length > 0 ? (
-          <ReactPaginate
-            previousLabel={<ArrowBack />}
-            nextLabel={<ArrowForward />}
-            totalPosts={products.length}
-            pageCount={Math.ceil(totalPosts / postsPerPage)}
-            marginPagesDisplayed={1}
-            pageRangeDisplayed={2} // Aquí estableces el número de botones de página a mostrar
-            onPageChange={handlePageClick}
-            containerClassName={"pagination"}
-            activeClassName={"active"}
-            forcePage={currentPage}
-          />
-        ) : null} */}
       </div>
     </>
   );

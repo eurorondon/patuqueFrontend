@@ -70,11 +70,8 @@ export const listProductCategoria1 =
 
       if (keyword != "") {
         const { data } = await axios.get(
-          `${URL}/api/products?keyword=${keyword}&pageNumber=${pageNumber}`,
-          console.log("hola")
+          `${URL}/api/products?keyword=${keyword}&pageNumber=${pageNumber}`
         );
-
-        console.log("hola");
 
         dispatch({ type: PRODUCT_LIST_CATEGORIA1_SUCCESS, payload: data });
       } else {
@@ -96,7 +93,7 @@ export const listProductCategoria1 =
 
 // PRODUCT LIST CATEGORIA2 EN ESPECIFICO ALUMINIO
 export const listProductCategoria2 =
-  (keyword = "", pageNumber = "", category = "Aluminio") =>
+  (keyword = "", pageNumber = "", category = "Oferta") =>
   async (dispatch) => {
     try {
       dispatch({ type: PRODUCT_LIST_CATEGORIA2_REQUEST });

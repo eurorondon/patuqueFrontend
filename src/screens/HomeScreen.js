@@ -63,7 +63,6 @@ const HomeScreen = ({ match }) => {
       {currentPath !== "" ? (
         <Oferta
           keyword={keyword}
-          pagenumber={pagenumber}
           currentPage={currentPage}
           setCurrentPage={setCurrentPage}
         />
