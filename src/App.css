@@ -330,6 +330,11 @@ textarea:focus {
     grid-gap: 5px;
     /* grid-auto-rows: 290px; */
   }
+  .grid3{
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 5px;
+    /* grid-auto-rows: 290px; */
+  }
 }
 
 /* SHOP */
