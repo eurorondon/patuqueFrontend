@@ -84,9 +84,13 @@ const ShopSection = (props) => {
   const handlePageClick = (data) => {
     const selectedPage = data.selected;
     setCurrentPage(selectedPage);
-    // scroll(0, 0);
     history.push(`?page=${selectedPage}`);
+
+    setTimeout(function () {
+      window.scrollTo({ top: 100, left: 0, behavior: "smooth" });
+    }, 100);
   };
+
   // console.log(currentPage);
 
   // useEffect(() => {

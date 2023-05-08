@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "./../components/Header";
 import ShopSection from "./../components/homeComponents/ShopSection";
 import Oferta from "../components/homeComponents/Oferta";
@@ -33,8 +33,8 @@ const HomeScreen = ({ match }) => {
     // setSelectedCategory("");
     setCurrentPage(0);
   };
-
   const [currentPage, setCurrentPage] = useState(0);
+
   return (
     <div className="" style={{ backgroundColor: "" }}>
       <Navbar />

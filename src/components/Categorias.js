@@ -55,7 +55,13 @@ function Categorias() {
       <h2 className="text-center my-4">DESTACADOS</h2>
 
       {/* <div className="row  row-cols-md-3 row-cols-lg-6 row-cols-xl-6 d-flex justify-content-center gap-2"> */}
-      <div className={window.innerWidth > 768 ? "grid3" : "grid3 "}>
+      <div
+        className={
+          window.innerWidth > 768
+            ? "grid3"
+            : "row  row-cols-md-3 row-cols-lg-6 row-cols-xl-6 d-flex justify-content-center gap-4 mx-4 "
+        }
+      >
         {categorias.map((categoria, index) => (
           <div
             className={window.innerWidth > 767 ? "p-3 card   " : "p-1 "}
