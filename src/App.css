@@ -319,8 +319,13 @@ textarea:focus {
   }
 }
 
-@media (max-width: 650px) {
+@media (max-width: 768px) {
   .grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 5px;
+    /* grid-auto-rows: 290px; */
+  }
+  .grid2{
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 5px;
     /* grid-auto-rows: 290px; */
