@@ -42,11 +42,12 @@ const Oferta = (props) => {
       <div
         className={
           window.innerWidth > 1400
-            ? " mx-5  mt-4"
+            ? " mx-5  "
             : window.innerWidth > 1000
-            ? "container mt-4"
-            : " mt-4"
+            ? "container "
+            : " "
         }
+        style={{ margin: "100px 0px" }}
       >
         {loading ? (
           <div className="" style={{ margin: "200px 0px" }}>

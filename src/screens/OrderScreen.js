@@ -10,6 +10,8 @@ import moment from "moment";
 import axios from "axios";
 import { ORDER_PAY_RESET } from "../Redux/Constants/OrderConstants";
 import { URL } from "./../Redux/Url";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 const OrderScreen = ({ match }) => {
   window.scrollTo(0, 0);
@@ -95,8 +97,9 @@ const OrderScreen = ({ match }) => {
 
   return (
     <>
+      <Navbar />
       <Header />
-      <div className="container">
+      <div className="container my-md-5">
         {loading ? (
           <Loading />
         ) : error ? (
@@ -297,6 +300,7 @@ const OrderScreen = ({ match }) => {
           </>
         )}
       </div>
+      <Footer />
     </>
   );
 };

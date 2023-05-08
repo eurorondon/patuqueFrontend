@@ -3,6 +3,8 @@ import Header from "./../components/Header";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart, removefromcart } from "./../Redux/Actions/cartActions";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 const CartScreen = ({ match, location, history }) => {
   window.scrollTo(0, 0);
@@ -34,6 +36,7 @@ const CartScreen = ({ match, location, history }) => {
   console.log(cartItems);
   return (
     <>
+      <Navbar />
       <Header />
       {/* Cart */}
       <div className="container">
@@ -116,6 +119,7 @@ const CartScreen = ({ match, location, history }) => {
           </>
         )}
       </div>
+      <Footer />
     </>
   );
 };

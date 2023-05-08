@@ -14,6 +14,8 @@ import moment from "moment";
 import Modal from "../components/Modal";
 import Carousel from "./../components/Carousel";
 import { Undo } from "@material-ui/icons";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 const SingleProduct = ({ history, match }) => {
   const [qty, setQty] = useState(1);
@@ -73,6 +75,7 @@ const SingleProduct = ({ history, match }) => {
 
   return (
     <>
+      <Navbar />
       <Header />
       <Modal modal={modal} setModal={setModal} galeria={galeria}></Modal>
       <div className=" container-md px-0 my-5">
@@ -271,6 +274,7 @@ const SingleProduct = ({ history, match }) => {
           </>
         )}
       </div>
+      <Footer />
     </>
   );
 };

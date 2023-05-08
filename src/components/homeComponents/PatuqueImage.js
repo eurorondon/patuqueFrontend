@@ -57,35 +57,10 @@ const PatuqueImage = ({ setCurrentPage }) => {
         />
 
         <div
-          className="col-12 d-flex align-items-center justify-content-end Login-Register "
-          style={{ position: "absolute" }}
+          className="col-12 d-flex align-items-center Login-Register  "
+          style={{ position: "absolute", backgroundColor: "red" }}
         >
-          {userInfo ? (
-            <div
-              className="btn-group"
-              // style={{ position: "absolute", left: "0" }}
-            >
-              <button
-                type="button"
-                className="name-button dropdown-toggle"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
-                <i className="fas fa-user mx-1"></i>
-                Hola, {userInfo.name}
-              </button>
-              <div className="dropdown-menu">
-                <Link className="dropdown-item" to="/profile">
-                  Perfils
-                </Link>
-
-                <Link className="dropdown-item" to="#" onClick={logoutHandler}>
-                  Logout
-                </Link>
-              </div>
-            </div>
-          ) : (
+          {userInfo ? null : (
             <div
               className="btn-group"
               // style={{ position: "absolute", left: "0", top: "40px" }}
@@ -129,12 +104,14 @@ const PatuqueImage = ({ setCurrentPage }) => {
                 : { position: "absolute", right: "30px", top: "40px" }
             }
           >
-            <Link to="/cart" className="cart-mobile-icon">
-              <i className="fas fa-shopping-bag"></i>
-              <span className="badge" style={{ position: "absolute" }}>
-                {cartItems.length}
-              </span>
-            </Link>
+            {userInfo ? null : (
+              <Link to="/cart" className="cart-mobile-icon">
+                <i className="fas fa-shopping-bag"></i>
+                <span className="badge" style={{ position: "absolute" }}>
+                  {cartItems.length}
+                </span>
+              </Link>
+            )}
           </div>
         </div>
       </div>
