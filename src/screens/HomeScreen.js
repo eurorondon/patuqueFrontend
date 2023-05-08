@@ -52,21 +52,23 @@ const HomeScreen = ({ match }) => {
       <PatuqueImage setCurrentPage={setCurrentPage} />
       <Menu />
       <SliderCategorias />
-      <ElasticCaruselLoMasNuevo />
+
+      {currentPath === "/" && currentPage === 0 && <ElasticCaruselLoMasNuevo />}
+
       {/* {currentPath == "/" ? <CarrucelCategoria1 /> : null} */}
-      {currentPath == "/" ? <Categorias /> : null}
+      {currentPath === "/" && currentPage === 0 && <Categorias />}
       {/* {currentPath == "/" ? <CalltoActionSection /> : null} */}
       {/* {currentPath == "/" ? <Tarjetas /> : null} */}
       {/* {currentPath == "/" ? <CarrucelCategoria2 /> : null}
       {currentPath == "/" ? <CarrucelCategoria3 /> : null} */}
 
-      {currentPath !== "" ? (
+      {currentPath === "/" && currentPage === 0 && (
         <Oferta
           keyword={keyword}
           currentPage={currentPage}
           setCurrentPage={setCurrentPage}
         />
-      ) : null}
+      )}
 
       {currentPath !== "" ? (
         <ShopSection
