@@ -206,7 +206,7 @@ const OrderScreen = ({ match }) => {
                     {order.orderItems.map((item, index) => (
                       <div className="order-product row" key={index}>
                         <div className="col-md-3 col-6">
-                          <img src={item.image[0]} alt={item.name} />
+                          <img src={item.photo} alt={item.name} />
                         </div>
                         <div className="col-md-5 col-6 d-flex align-items-center">
                           <Link to={`/products/${item.product}`}>

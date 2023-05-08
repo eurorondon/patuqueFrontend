@@ -11,8 +11,6 @@ import {
 import Loading from "../components/LoadingError/Loading";
 import { PRODUCT_CREATE_REVIEW_RESET } from "../Redux/Constants/ProductConstants";
 import moment from "moment";
-import SimpleSlider from "../components/SlickTest";
-import Grid from "../components/Grid";
 import Modal from "../components/Modal";
 import Carousel from "./../components/Carousel";
 import { Undo } from "@material-ui/icons";

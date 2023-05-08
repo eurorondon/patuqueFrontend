@@ -31,23 +31,22 @@ export const listProduct =
 
       if (!category) {
         const { data } = await axios.get(
-          `${URL}/api/products?keyword=${keyword}&pageNumber=${pageNumber}`,
+          `${URL}/api/products?keyword=${keyword}&pageNumber=${pageNumber}`
 
-          console.log(
-            "SIN CATEGORIAS",
-            `${URL}/api/products?keyword=${keyword}&pageNumber=${pageNumber}`
-          )
+          // console.log(
+          //   "SIN CATEGORIAS",
+          //   `${URL}/api/products?keyword=${keyword}&pageNumber=${pageNumber}`
+          // )
         );
-        console.log(data);
 
         dispatch({ type: PRODUCT_LIST_SUCCESS, payload: data });
       } else {
         const { data } = await axios.get(
-          `${URL}/api/products?&pageNumber=${pageNumber}&category=${category}`,
-          console.log(
-            "CON CATEGORIAS",
-            `${URL}/api/products?&pageNumber=${pageNumber}&category=${category}`
-          )
+          `${URL}/api/products?&pageNumber=${pageNumber}&category=${category}`
+          // console.log(
+          //   "CON CATEGORIAS",
+          //   `${URL}/api/products?&pageNumber=${pageNumber}&category=${category}`
+          // )
         );
         dispatch({ type: PRODUCT_LIST_SUCCESS, payload: data });
       }

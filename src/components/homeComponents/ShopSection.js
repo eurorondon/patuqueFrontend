@@ -15,11 +15,9 @@ const ShopSection = (props) => {
 
   const productList = useSelector((state) => state.productList);
   const { loading, error, products, page, pages } = productList;
-  console.log([products]);
+
   const [selectedCategory, setSelectedCategory] = useState();
   const { category } = useParams();
-
-  // console.log(pages);
 
   let history = useHistory();
   const [postsPerPage, setPostsPerPage] = useState(12);
@@ -91,13 +89,9 @@ const ShopSection = (props) => {
     }, 100);
   };
 
-  // console.log(currentPage);
-
   // useEffect(() => {
   //   dispatch(listProduct(keyword, currentPage, category));
   // }, [currentPage]);
-
-  // console.log(page);
 
   //AQUI TERMINA FUNCIONES DE PAGINACION
 

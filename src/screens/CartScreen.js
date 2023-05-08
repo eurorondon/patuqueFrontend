@@ -13,6 +13,8 @@ const CartScreen = ({ match, location, history }) => {
   const cart = useSelector((state) => state.cart);
   const { cartItems } = cart;
 
+  console.log(cartItems);
+
   const total = cartItems.reduce((a, i) => a + i.qty * i.price, 0).toFixed(2);
 
   useEffect(() => {
@@ -24,8 +26,6 @@ const CartScreen = ({ match, location, history }) => {
   const checkOutHandler = () => {
     history.push("/login?redirect=placeorder");
   };
-
-  
 
   const removeFromCartHandle = (id) => {
     dispatch(removefromcart(id));
@@ -68,7 +68,7 @@ const CartScreen = ({ match, location, history }) => {
                   <i className="fas fa-times"></i>
                 </div>
                 <div className="cart-image col-md-3">
-                  <img src={item.image[0]} alt={item.name} />
+                  <img src={item.photo} alt={item.name} />
                 </div>
                 <div className="cart-text col-md-5 d-flex align-items-center">
                   <Link to={`/products/${item.product}`}>

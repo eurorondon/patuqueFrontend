@@ -34,7 +34,6 @@ const HomeScreen = ({ match }) => {
     setCurrentPage(0);
   };
   const [currentPage, setCurrentPage] = useState(0);
-
   return (
     <div className="" style={{ backgroundColor: "" }}>
       <Navbar />
