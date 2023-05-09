@@ -6,7 +6,12 @@ import Loading from "../LoadingError/Loading";
 import Message from "../LoadingError/Error";
 import Grid from "../Grid";
 import ReactPaginate from "react-paginate";
-import { ArrowBack, ArrowForward, Search } from "@material-ui/icons";
+import {
+  ArrowBack,
+  ArrowForward,
+  Search,
+  SearchOutlined,
+} from "@material-ui/icons";
 
 const ShopSection = (props) => {
   const { keyword, setCurrentPage, currentPage } = props;
@@ -31,28 +36,10 @@ const ShopSection = (props) => {
   }, [dispatch, keyword, category, currentPage]);
 
   useEffect(() => {
-    // Función que se ejecuta al inicio para establecer el valor inicial, esta funcion es para variar la cantidad de tarjetas o productos que se muestran dependeiendo del responsive o query screen
-    // function handleResize() {
-    //   if (window.innerWidth > 1615) {
-    //     setPostsPerPage(14);
-    //   }
-    //   if (window.innerWidth < 1726) {
-    //     setPostsPerPage(12);
-    //   }
-    //   if (window.innerWidth < 1491) {
-    //     setPostsPerPage(10);
-    //   }
-    //   if (window.innerWidth < 1256) {
-    //     setPostsPerPage(12);
-    //   }
-    // }
-    // function handleCategoryFromUrl() {
-    //   const { category } = useParams();
-    //   setSelectedCategory(category || ""); // establecer la categoría si existe en la URL
-    // }
-    // handleResize();
-    // window.addEventListener("resize", handleResize);
-  }, []);
+    setTimeout(function () {
+      window.scrollTo({ top: 100, left: 0, behavior: "smooth" });
+    }, 100);
+  }, [category]);
 
   // AQUI EMPIEZA FUNCIONES DE PAGINACION
 
@@ -158,9 +145,10 @@ const ShopSection = (props) => {
                     <div className="d-flex  align-items-center">
                       {keyword ? (
                         <div>
-                          {" "}
-                          <h2 className="me-4">
-                            {keyword.charAt(0).toUpperCase() + keyword.slice(1)}
+                          <h2 className="mx-5">
+                            <SearchOutlined />{" "}
+                            {keyword.charAt(0).toUpperCase() +
+                              keyword.substring(1)}
                           </h2>
                         </div>
                       ) : (
@@ -247,8 +235,10 @@ const ShopSection = (props) => {
               <div
                 className={window.innerWidth > 1240 ? "ms-5  mt-4" : " mt-4"}
               >
-                <div className="d-flex  align-items-center">
-                  <h2 className="me-4">{category}</h2>
+                <div className="d-flex  align-items-center ">
+                  <h2 className="mx-5">
+                    <SearchOutlined /> {category}
+                  </h2>
                   <div>
                     <select name="categoria" id="" onChange={handleCategoria}>
                       <option disabled selected value="">

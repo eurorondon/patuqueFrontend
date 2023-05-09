@@ -73,6 +73,12 @@ const SingleProduct = ({ history, match }) => {
     history.goBack();
   };
 
+  useEffect(() => {
+    setTimeout(function () {
+      window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+    }, 100);
+  }, []);
+
   return (
     <>
       <Navbar />

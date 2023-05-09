@@ -1,5 +1,6 @@
-import { Facebook, Instagram, Place, WhatsApp } from "@material-ui/icons";
 import React from "react";
+import { Facebook, Home, Instagram, Place, WhatsApp } from "@material-ui/icons";
+import { Link } from "react-router-dom";
 
 const Announcement = () => {
   if (window.innerWidth > 767) {
@@ -39,8 +40,22 @@ const Announcement = () => {
           style={{
             backgroundColor: "#6768A9",
             fontSize: "clamp(0.9rem, 3.5vw, 1.2rem)",
+            position: "relative",
           }}
         >
+          <div
+            className="rounded"
+            style={{
+              position: "absolute",
+              left: "15px",
+              top: "15%",
+              backgroundColor: "#D8D8F0",
+            }}
+          >
+            <Link to="/">
+              <Home style={{ fontSize: "2.5rem" }} />
+            </Link>
+          </div>
           <div className="text-white row ">
             <div className="col d-flex justify-content-center aling-items-center gap-5 ">
               <p>CONTACTANOS +58 412 5263763</p>

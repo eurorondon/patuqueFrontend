@@ -21,12 +21,16 @@ import ElasticCaruselLoMasNuevo from "../components/homeComponents/ElasticCaruse
 import Navbar from "../components/Navbar";
 
 const HomeScreen = ({ match }) => {
-  window.scrollTo(0, 0);
   const keyword = match.params.keyword;
   const pagenumber = match.params.pagenumber;
 
   let history = useHistory();
   const currentPath = history.location.pathname;
+
+  // window.addEventListener("scroll", function () {
+  //   var scrollPosition = window.scrollY;
+  //   console.log("El scroll ha bajado " + scrollPosition + " píxeles.");
+  // });
 
   const handleGoBack = () => {
     history.push(`/`);
@@ -50,7 +54,7 @@ const HomeScreen = ({ match }) => {
       )}
       <PatuqueImage setCurrentPage={setCurrentPage} />
       <Menu />
-      <SliderCategorias />
+      {currentPath === "/" && currentPage === 0 && <SliderCategorias />}
 
       {currentPath === "/" && currentPage === 0 && <ElasticCaruselLoMasNuevo />}
 

@@ -28,6 +28,10 @@ const PatuqueImage = ({ setCurrentPage }) => {
     } else {
       history.push("/");
     }
+
+    setTimeout(function () {
+      window.scrollTo({ top: 100, left: 0, behavior: "smooth" });
+    }, 100);
   };
 
   return (

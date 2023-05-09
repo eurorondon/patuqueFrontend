@@ -41,13 +41,17 @@ const CartScreen = ({ match, location, history }) => {
       {/* Cart */}
       <div className="container">
         {cartItems.length === 0 ? (
-          <div className=" alert alert-info text-center mt-3">
+          <div
+            className=" alert alert-info text-center mt-3 d-flex flex-column justify-content-center"
+            style={{ minHeight: "50vh" }}
+          >
             Tu carrito esta vacío
             <Link
-              className="btn btn-success mx-5 px-5 py-3"
+              className="btn btn-success mx-5 px-5 py-3 mx-auto"
               to="/"
               style={{
                 fontSize: "12px",
+                // width: "500px",
               }}
             >
               COMPRAR AHORA
