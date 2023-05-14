@@ -35,11 +35,11 @@ const ShopSection = (props) => {
     dispatch(listProduct(keyword, currentPage, category));
   }, [dispatch, keyword, category, currentPage]);
 
-  useEffect(() => {
-    setTimeout(function () {
-      window.scrollTo({ top: 100, left: 0, behavior: "smooth" });
-    }, 100);
-  }, [category]);
+  // useEffect(() => {
+  //   setTimeout(function () {
+  //     window.scrollTo({ top: 100, left: 0, behavior: "smooth" });
+  //   }, 100);
+  // }, [category]);
 
   // AQUI EMPIEZA FUNCIONES DE PAGINACION
 

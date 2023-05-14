@@ -43,6 +43,9 @@ function Categorias() {
 
   const seleccionarCategoria = (nombreCategoria) => {
     setCategory(nombreCategoria);
+    setTimeout(function () {
+      window.scrollTo({ top: 100, left: 0, behavior: "smooth" });
+    }, 100);
     history.push(`/category/${nombreCategoria}`);
   };
 

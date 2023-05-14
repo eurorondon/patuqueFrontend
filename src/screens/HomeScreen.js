@@ -1,24 +1,17 @@
 import React, { useState, useEffect } from "react";
-import Header from "./../components/Header";
-import ShopSection from "./../components/homeComponents/ShopSection";
-import Oferta from "../components/homeComponents/Oferta";
-import ContactInfo from "./../components/homeComponents/ContactInfo";
-import CalltoActionSection from "./../components/homeComponents/CalltoActionSection";
-import Footer from "./../components/Footer";
-import Slider from "../components/Slider";
 import { useHistory } from "react-router-dom";
-import TopSell from "../components/TopSell";
-import Categorias from "../components/Categorias";
-import Tarjetas from "../components/Tarjetas";
-import CarrucelCategoria1 from "./../components/CarrucelCategoria1";
-import CarrucelCategoria2 from "../components/CarrucelCategoria2";
-import CarrucelCategoria3 from "../components/CarrucelCategoria3";
-import { Undo } from "@material-ui/icons";
+
+import Navbar from "../components/Navbar";
+import Header from "./../components/Header";
 import PatuqueImage from "../components/homeComponents/PatuqueImage";
 import Menu from "../components/homeComponents/Menu";
 import SliderCategorias from "../components/homeComponents/SliderCategorias";
 import ElasticCaruselLoMasNuevo from "../components/homeComponents/ElasticCaruselLoMasNuevo";
-import Navbar from "../components/Navbar";
+import Categorias from "../components/Categorias";
+import Oferta from "../components/homeComponents/Oferta";
+import ShopSection from "./../components/homeComponents/ShopSection";
+import Footer from "./../components/Footer";
+import { Undo } from "@material-ui/icons";
 
 const HomeScreen = ({ match }) => {
   const keyword = match.params.keyword;
@@ -26,11 +19,6 @@ const HomeScreen = ({ match }) => {
 
   let history = useHistory();
   const currentPath = history.location.pathname;
-
-  // window.addEventListener("scroll", function () {
-  //   var scrollPosition = window.scrollY;
-  //   console.log("El scroll ha bajado " + scrollPosition + " píxeles.");
-  // });
 
   const handleGoBack = () => {
     history.push(`/`);
@@ -53,18 +41,10 @@ const HomeScreen = ({ match }) => {
         </div>
       )}
       <PatuqueImage setCurrentPage={setCurrentPage} />
-      <Menu />
+      <Menu setCurrentPage={setCurrentPage} />
       {currentPath === "/" && currentPage === 0 && <SliderCategorias />}
-
       {currentPath === "/" && currentPage === 0 && <ElasticCaruselLoMasNuevo />}
-
-      {/* {currentPath == "/" ? <CarrucelCategoria1 /> : null} */}
       {currentPath === "/" && currentPage === 0 && <Categorias />}
-      {/* {currentPath == "/" ? <CalltoActionSection /> : null} */}
-      {/* {currentPath == "/" ? <Tarjetas /> : null} */}
-      {/* {currentPath == "/" ? <CarrucelCategoria2 /> : null}
-      {currentPath == "/" ? <CarrucelCategoria3 /> : null} */}
-
       {currentPath === "/" && currentPage === 0 && (
         <Oferta
           keyword={keyword}
@@ -72,7 +52,6 @@ const HomeScreen = ({ match }) => {
           setCurrentPage={setCurrentPage}
         />
       )}
-
       {currentPath !== "" ? (
         <ShopSection
           keyword={keyword}
@@ -81,8 +60,6 @@ const HomeScreen = ({ match }) => {
           setCurrentPage={setCurrentPage}
         />
       ) : null}
-
-      <ContactInfo />
       <Footer />
     </div>
   );

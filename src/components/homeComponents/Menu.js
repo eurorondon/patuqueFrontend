@@ -1,6 +1,7 @@
 import React from "react";
+import CategoriaSelector from "./CategoriaSelector";
 
-const Menu = () => {
+const Menu = ({ setCurrentPage }) => {
   return (
     <div style={{ backgroundColor: "rgba(231, 233, 255, 0.50)" }} className="">
       {window.innerWidth > 767 ? (
@@ -12,11 +13,12 @@ const Menu = () => {
             >
               TIENDA
             </button>
+
             <button
               className="col text-center btn"
               style={{ fontWeight: "bold" }}
             >
-              CATEGORIAS
+              <CategoriaSelector setCurrentPage={setCurrentPage} />
             </button>
             <button
               className="col text-center btn"
