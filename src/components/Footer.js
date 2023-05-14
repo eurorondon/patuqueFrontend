@@ -3,7 +3,10 @@ import React from "react";
 const Footer = () => {
   return (
     <>
-      <footer className="text-center text-lg-start bg-light  bg-dark text-light ">
+      <footer
+        className="text-center text-lg-start bg-light  bg-dark text-light "
+        id="Footer"
+      >
         {/* <!-- Section: Social media --> */}
         <section className="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
           {/* <!-- Left --> */}

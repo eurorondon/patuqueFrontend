@@ -14,10 +14,7 @@ const Menu = ({ setCurrentPage }) => {
               TIENDA
             </button>
 
-            <button
-              className="col text-center btn"
-              style={{ fontWeight: "bold" }}
-            >
+            <button className="col text-center btn" style={{ fontWeight: "" }}>
               <CategoriaSelector setCurrentPage={setCurrentPage} />
             </button>
             <button

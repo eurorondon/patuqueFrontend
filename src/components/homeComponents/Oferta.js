@@ -48,6 +48,7 @@ const Oferta = (props) => {
             : " "
         }
         style={{ margin: "100px 0px" }}
+        id="Ofertas"
       >
         {loading ? (
           <div className="" style={{ margin: "200px 0px" }}>

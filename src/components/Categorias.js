@@ -54,6 +54,7 @@ function Categorias() {
       className={
         window.innerWidth > 1280 ? "  mx-auto  mt-4" : "  container mt-4"
       }
+      id="Destacados"
     >
       <h2 className="text-center my-4">DESTACADOS</h2>
 

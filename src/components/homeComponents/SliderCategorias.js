@@ -1,6 +1,7 @@
 import React from "react";
 import Carousel from "react-elastic-carousel";
 import { Link } from "react-router-dom";
+import { Link as LinkScroll } from "react-scroll";
 
 const breakPoints = [
   { width: 1, itemsToShow: 3 },
@@ -88,9 +89,24 @@ const SliderCategorias = () => {
       {window.innerWidth < 767 ? (
         <div>
           <h2 className="mt-5 mb-1 text-center">Categorias</h2>
-          <div className="d-flex justify-content-center">
-            <a className="text-center mx-auto block">Ver todas</a>
-          </div>
+          <LinkScroll
+            className="d-flex justify-content-center"
+            activeClass="active"
+            to="ShopSection"
+            spy={true}
+            smooth={true}
+            offset={-25}
+            duration={250}
+          >
+            <button
+              className="text-center mx-auto block btn  "
+              style={{
+                backgroundColor: "",
+              }}
+            >
+              Ver todos los productos
+            </button>
+          </LinkScroll>
           <Carousel
             breakPoints={breakPoints}
             itemsToShow={3}

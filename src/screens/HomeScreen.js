@@ -20,15 +20,17 @@ const HomeScreen = ({ match }) => {
   let history = useHistory();
   const currentPath = history.location.pathname;
 
+  const [currentPage, setCurrentPage] = useState(0);
+
   const handleGoBack = () => {
     history.push(`/`);
     // setSelectedCategory("");
     setCurrentPage(0);
   };
-  const [currentPage, setCurrentPage] = useState(0);
+
   return (
     <div className="" style={{ backgroundColor: "" }}>
-      <Navbar />
+      <Navbar setCurrentPage={setCurrentPage} currentPath={currentPath} />
       <Header setCurrentPage={setCurrentPage} />
       {currentPath == "/" ? null : (
         <div className="mt-3 ms-3">

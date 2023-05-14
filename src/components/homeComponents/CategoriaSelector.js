@@ -1,6 +1,6 @@
 import { MenuOpen } from "@material-ui/icons";
 import React, { useState } from "react";
-import { Link, useHistory, useParams } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 function CategoriaSelector({ setCurrentPage }) {
   const [mostrarCategorias, setMostrarCategorias] = useState(false);

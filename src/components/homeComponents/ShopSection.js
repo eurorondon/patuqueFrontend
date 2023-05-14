@@ -123,6 +123,7 @@ const ShopSection = (props) => {
             ? "container mt-4"
             : " mt-4"
         }
+        id="ShopSection"
       >
         {loading ? (
           <div className="" style={{ margin: "200px 0px" }}>
@@ -142,7 +143,7 @@ const ShopSection = (props) => {
               <div>
                 {products?.length > 0 ? (
                   <>
-                    <div className="d-flex  align-items-center">
+                    <div className="d-flex  align-items-center" id="">
                       {keyword ? (
                         <div>
                           <h2 className="mx-5">
@@ -235,8 +236,8 @@ const ShopSection = (props) => {
               <div
                 className={window.innerWidth > 1240 ? "ms-5  mt-4" : " mt-4"}
               >
-                <div className="d-flex  align-items-center ">
-                  <h2 className="mx-5">
+                <div className="d-flex  align-items-center justify-content-evenly  ">
+                  <h2 className="">
                     <SearchOutlined /> {category}
                   </h2>
                   <div>

@@ -16,6 +16,15 @@ import Carousel from "./../components/Carousel";
 import { Undo } from "@material-ui/icons";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import { animateScroll as scroll } from "react-scroll";
+
+const scrollToSection = () => {
+  scroll.scrollTo("#Destacados", {
+    duration: 250,
+    delay: 0,
+    smooth: "easeInOutQuart",
+  });
+};
 
 const SingleProduct = ({ history, match }) => {
   const [qty, setQty] = useState(1);

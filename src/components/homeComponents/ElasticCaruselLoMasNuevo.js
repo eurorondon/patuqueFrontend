@@ -73,7 +73,10 @@ const ElasticCaruselLoMasNuevo = () => {
       ))
     : null;
   return (
-    <div className={window.innerWidth > 1280 ? "   mt-4" : "container mt-4"}>
+    <div
+      className={window.innerWidth > 1280 ? "   mt-4" : "container mt-4"}
+      id="Novedades"
+    >
       {products && products.length > 1 ? (
         <div className={window.innerWidth > 1240 ? "mx-5" : "container"}>
           {/* <div className={window.innerWidth > 1240 ? "container" : "container"}> */}
