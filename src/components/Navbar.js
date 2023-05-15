@@ -4,7 +4,7 @@ import { Link as LinkScroll } from "react-scroll";
 
 const categorias = [
   {
-    title: "Labios",
+    title: "Skin care ",
     id: 1,
   },
   {
@@ -16,12 +16,48 @@ const categorias = [
     id: 3,
   },
   {
-    title: "Bronceador",
+    title: "Bronzer y contornos ",
     id: 4,
   },
   {
-    title: "Skin care",
+    title: "Cejas ",
     id: 5,
+  },
+  {
+    title: "Correctores",
+    id: 6,
+  },
+  {
+    title: "Delineadores",
+    id: 7,
+  },
+  {
+    title: "Iluminadores",
+    id: 8,
+  },
+  {
+    title: "Labiales",
+    id: 9,
+  },
+  {
+    title: "Máscara de pestañas",
+    id: 10,
+  },
+  {
+    title: "Paletas de sombras ",
+    id: 11,
+  },
+  {
+    title: "Rubores",
+    id: 12,
+  },
+  {
+    title: "Polvos compactos y suelto",
+    id: 13,
+  },
+  {
+    title: "Otros",
+    id: 14,
   },
 ];
 
@@ -89,7 +125,14 @@ const Navbar = ({ setCurrentPage, currentPath }) => {
           >
             <ul className="navbar-nav mr-auto">
               <li className="nav-item active">
-                <Link className="nav-link" to="/">
+                <Link
+                  className="nav-link"
+                  to="/"
+                  onClick={() => {
+                    setCurrentPage(0);
+                    setShowMenu(false);
+                  }}
+                >
                   Home <span className="sr-only">(current)</span>
                 </Link>
               </li>

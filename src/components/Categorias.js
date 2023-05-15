@@ -20,16 +20,6 @@ const categorias = [
     nombre: "Aprende",
     imagen: "/images/aprende.png",
   },
-  // {
-  //   nombre: "Belleza hombre y mujer",
-  //   imagen:
-  //     "https://res.cloudinary.com/dpgpmqo6c/image/upload/v1680663778/6_jez0au.png",
-  // },
-  // {
-  //   nombre: "Contenedores",
-  //   imagen:
-  //     "https://res.cloudinary.com/dpgpmqo6c/image/upload/v1680663778/Dise%C3%B1o_sin_t%C3%ADtulo_-_2023-04-04T145558.460_lunpzm.png",
-  // },
 ];
 
 function Categorias() {

@@ -14,8 +14,9 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
 const OrderScreen = ({ match }) => {
-  window.scrollTo(0, 0);
+  // window.scrollTo(0, 0);
   const [sdkReady, setSdkReady] = useState(false);
+  const [cargando, setCargando] = useState(false);
   const [image, setImage] = useState([]);
   const orderId = match.params.id;
   const dispatch = useDispatch();
@@ -23,20 +24,14 @@ const OrderScreen = ({ match }) => {
   const orderDetails = useSelector((state) => state.orderDetails);
   const { order, loading, error } = orderDetails;
 
-  // const userName = orderDetails.order.user.name;
-  // const mensajes = orderDetails.order.orderItems.map(
-  //   (pedido) =>
-  //     `hola mi nombre es ${userName}, me interesa comprar estos productos ${pedido.name}`
-  // );
-  // console.log(JSON.stringify(mensajes));
+  const cart = useSelector((state) => state.cart);
 
   const orderPay = useSelector((state) => state.orderPay);
   const { loading: loadingPay, success: successPay } = orderPay;
 
   const userLogin = useSelector((state) => state.userLogin);
-  const {
-    userInfo: { email },
-  } = userLogin;
+
+  const { userInfo, email } = userLogin;
 
   if (!loading) {
     const addDecimals = (num) => {
@@ -77,19 +72,30 @@ const OrderScreen = ({ match }) => {
   const submitHandler = (e) => {
     e.preventDefault();
     dispatch(payOrder(orderId, order, email, image));
+    setCargando(true);
   };
 
   const whatsappHandler = () => {
     if (order.comprobantePago) {
+      const productos = order?.orderItems
+        .map(
+          (item) =>
+            ` \n ✅ *${item.name}*   \n *Cantidad*: ${item.qty} \n *Precio*:${item.price}$ \n`
+        )
+        .join("");
       // para enviar  orden a whatsapp
+      const name = userInfo.name;
       const link = order.comprobantePago;
-      const mensaje = `👋 Hola, Adjunto link de  comprobante de pago por mis productos  \n \n  ${link}`;
+      const mensaje = `👋 Hola, mi nombre es ${name}.\n he comprar estos artículos: 💭 \n ${productos} \n Para pagar un total de 🔜 *${order.itemsPrice}$* \n \n   Adjunto link de  comprobante de pago por mis productos  \n \n  ${link}`;
       const telefono = "+584245116397"; // Reemplaza con el número de teléfono al que quieres enviar el mensaje
       // const mensaje = "Hola, quiero hacer un pago"; // Reemplaza con el mensaje que quieres enviar
+
+      // para enviar  orden a whatsapp
+
       const url = `https://api.whatsapp.com/send?phone=${telefono}&text=${encodeURIComponent(
         mensaje
       )}`;
-      console.log(order.comprobantePago);
+      console.log(order);
       // window.open(url, "_blank");
       window.open(url);
     }
@@ -101,7 +107,9 @@ const OrderScreen = ({ match }) => {
       <Header />
       <div className="container my-md-5">
         {loading ? (
-          <Loading />
+          <div className="my-5">
+            <Loading />
+          </div>
         ) : error ? (
           <Message variant="alert-danger">{error}</Message>
         ) : (
@@ -293,6 +301,11 @@ const OrderScreen = ({ match }) => {
                       />
                       <button>Subir Comprobante</button>
                     </form>
+                    {cargando == true ? (
+                      <div className="mb-5">
+                        <Loading className="mt-5" />
+                      </div>
+                    ) : null}
                   </div>
                 )}
               </div>
@@ -300,6 +313,7 @@ const OrderScreen = ({ match }) => {
           </>
         )}
       </div>
+
       <Footer />
     </>
   );

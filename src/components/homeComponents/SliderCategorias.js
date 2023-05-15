@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Carousel from "react-elastic-carousel";
 import { Link } from "react-router-dom";
 import { Link as LinkScroll } from "react-scroll";
+import { useHistory } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { listProduct } from "../../Redux/Actions/ProductActions";
 
 const breakPoints = [
   { width: 1, itemsToShow: 3 },
@@ -32,63 +35,76 @@ const customArrow = ({ type, onClick }) => (
 
 const categorias = [
   {
-    title: "Skin care",
+    nombre: "Labios",
     id: 1,
   },
   {
-    title: "Bases",
+    nombre: "Bases",
     id: 2,
   },
   {
-    title: "Brochas",
+    nombre: "Brochas",
     id: 3,
   },
   {
-    title: "Bronceador",
+    nombre: "Bronceador",
     id: 4,
   },
   {
-    title: "Skin care",
+    nombre: "Skin care",
     id: 5,
   },
 ];
 
-const categoria = categorias
-  ? categorias.map((item) => (
-      <Link
-        key={item.id}
-        className=""
-        to={`/products/${item.title}`}
-        style={{
-          width: "100%",
-          gap: "1px",
-          margin: "0 0px",
-          fontSize: "15px",
-          fontWeight: "600",
-        }}
-      >
-        <div
-          className="  d-flex justify-content-center align-items-center rounded   "
-          style={{
-            height: "50px",
-            width: "100%",
-            // backgroundColor: "#D8D8F0",
-
-            margin: "0 2px",
-          }}
-        >
-          {item.title}
-        </div>
-      </Link>
-    ))
-  : null;
-
 const SliderCategorias = () => {
+  const [category, setCategory] = useState("");
+  const history = useHistory();
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(listProduct("", "", category));
+  }, [dispatch, category]);
+
+  const seleccionarCategoria = (nombreCategoria) => {
+    setCategory(nombreCategoria);
+    setTimeout(function () {
+      window.scrollTo({ top: 100, left: 0, behavior: "smooth" });
+    }, 100);
+    history.push(`/category/${nombreCategoria}`);
+  };
+
+  const categoria = categorias
+    ? categorias.map((item) => (
+        <div
+          style={{
+            width: "100%",
+            gap: "1px",
+            margin: "0 0px",
+            fontSize: "15px",
+            fontWeight: "600",
+          }}
+          onClick={() => seleccionarCategoria(item.nombre)}
+        >
+          <div
+            className="  d-flex justify-content-center align-items-center rounded   "
+            style={{
+              height: "50px",
+              width: "100%",
+              // backgroundColor: "#D8D8F0",
+
+              margin: "0 2px",
+            }}
+          >
+            {item.nombre}
+          </div>
+        </div>
+      ))
+    : null;
   return (
     <div className="mx-1">
       {window.innerWidth < 767 ? (
         <div>
-          <h2 className="mt-5 mb-1 text-center">Categorias</h2>
+          <h2 className="mt-5 mb-1 text-center">Categorias </h2>
           <LinkScroll
             className="d-flex justify-content-center"
             activeClass="active"

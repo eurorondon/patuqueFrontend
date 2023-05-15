@@ -41,26 +41,26 @@ const PlaceOrderScreen = ({ history }) => {
       history.push(`/order/${order._id}`);
       dispatch({ type: ORDER_CREATE_RESET });
 
-      const productos = cart.cartItems
-        .map(
-          (item) =>
-            ` \n ✅ *${item.name}*   \n *Cantidad*: ${item.qty} \n *Precio*:${item.price}$ \n`
-        )
-        .join("");
-      const link = `${URL}/order/${order._id}`;
-      const name = userInfo.name;
-      const mensaje = `👋 Hola, mi nombre es ${name}.\n Deseo comprar estos artículos: 💭 \n ${productos} \n Para pagar un total de 🔜 *${cart.totalPrice}$* \n `;
+      //   const productos = cart.cartItems
+      //     .map(
+      //       (item) =>
+      //         ` \n ✅ *${item.name}*   \n *Cantidad*: ${item.qty} \n *Precio*:${item.price}$ \n`
+      //     )
+      //     .join("");
+      //   const link = `${URL}/order/${order._id}`;
+      //   const name = userInfo.name;
+      //   const mensaje = `👋 Hola, mi nombre es ${name}.\n Deseo comprar estos artículos: 💭 \n ${productos} \n Para pagar un total de 🔜 *${cart.totalPrice}$* \n `;
 
-      // para enviar  orden a whatsapp
+      //   para enviar  orden a whatsapp
 
-      const telefono = "+584126022881";
-      const url = `https://api.whatsapp.com/send?phone=${telefono}&text=${encodeURIComponent(
-        mensaje
-      )}`;
+      //   const telefono = "+584126022881";
+      //   const url = `https://api.whatsapp.com/send?phone=${telefono}&text=${encodeURIComponent(
+      //     mensaje
+      //   )}`;
 
-      // window.open(url, "_blank");
-      // window.open(url);
-      window.open(url, "_self");
+      //   window.open(url, "_blank");
+      //   window.open(url);
+      //   window.open(url, "_self");
     }
   }, [history, dispatch, success, order]);
 
