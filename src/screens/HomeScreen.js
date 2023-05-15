@@ -62,6 +62,19 @@ const HomeScreen = ({ match }) => {
           setCurrentPage={setCurrentPage}
         />
       ) : null}
+      <button className=" whatsapp ">
+        <a
+          className="ocultar"
+          href="https://api.whatsapp.com/send?phone=65255567&text=Hola,%20te%20saluda%20Juan%20Severino,%20c%C3%B3mo%20puedo%20ayudarte"
+        >
+          <img
+            className="  "
+            src="/images/whatsapp.png"
+            alt=""
+            style={{ maxWidth: "10vh" }}
+          />
+        </a>
+      </button>
       <Footer />
     </div>
   );

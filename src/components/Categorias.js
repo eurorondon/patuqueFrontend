@@ -15,10 +15,12 @@ const categorias = [
   {
     nombre: "Aseosorias",
     imagen: "/images/asesorias.png",
+    link: "https://www.whatsapp.com/?lang=es",
   },
   {
     nombre: "Aprende",
     imagen: "/images/aprende.png",
+    link: "https://www.instagram.com/",
   },
 ];
 
@@ -57,33 +59,65 @@ function Categorias() {
         }
       >
         {categorias.map((categoria, index) => (
-          <div
-            className={window.innerWidth > 767 ? "p-3 card   " : "p-1 "}
-            key={index}
-            style={{
-              position: "relative",
-              borderRadius: "15px",
-              backgroundColor: "rgba(155, 156, 207, 0.08)",
-              border: "solid 1px #6768A9",
-              boxShadow: "2px 2px 4px rgba(0, 0, 0, 0.3)",
-            }}
-          >
-            <div
-              onClick={() => seleccionarCategoria(categoria.nombre)}
-              style={{ cursor: "pointer" }}
-            >
-              <div className="text-center my-2">
-                <h3 className="categoria-name">{categoria.nombre}</h3>
+          <div>
+            {categoria.link ? (
+              <a href={categoria.link}>
+                <div
+                  className={window.innerWidth > 767 ? "p-3 card   " : "p-1 "}
+                  key={index}
+                  style={{
+                    position: "relative",
+                    borderRadius: "15px",
+                    backgroundColor: "rgba(155, 156, 207, 0.08)",
+                    border: "solid 1px #6768A9",
+                    boxShadow: "2px 2px 4px rgba(0, 0, 0, 0.3)",
+                  }}
+                >
+                  <div style={{ cursor: "pointer" }}>
+                    <div className="text-center my-2">
+                      <h3 className="categoria-name">{categoria.nombre}</h3>
+                    </div>
+                    <img
+                      src={categoria.imagen}
+                      className="card-img-top rounded"
+                      alt={categoria.nombre}
+                    />
+                  </div>
+                  <div className="text-center my-2">
+                    <span className="categoria-name">ver mas</span>
+                  </div>
+                </div>
+              </a>
+            ) : (
+              <div
+                className={window.innerWidth > 767 ? "p-3 card   " : "p-1 "}
+                key={index}
+                style={{
+                  position: "relative",
+                  borderRadius: "15px",
+                  backgroundColor: "rgba(155, 156, 207, 0.08)",
+                  border: "solid 1px #6768A9",
+                  boxShadow: "2px 2px 4px rgba(0, 0, 0, 0.3)",
+                }}
+              >
+                <div
+                  onClick={() => seleccionarCategoria(categoria.nombre)}
+                  style={{ cursor: "pointer" }}
+                >
+                  <div className="text-center my-2">
+                    <h3 className="categoria-name">{categoria.nombre}</h3>
+                  </div>
+                  <img
+                    src={categoria.imagen}
+                    className="card-img-top rounded"
+                    alt={categoria.nombre}
+                  />
+                </div>
+                <div className="text-center my-2">
+                  <span className="categoria-name">ver mas</span>
+                </div>
               </div>
-              <img
-                src={categoria.imagen}
-                className="card-img-top rounded"
-                alt={categoria.nombre}
-              />
-            </div>
-            <div className="text-center my-2">
-              <span className="categoria-name">ver mas</span>
-            </div>
+            )}
           </div>
         ))}
       </div>

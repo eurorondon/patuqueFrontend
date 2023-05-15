@@ -87,7 +87,7 @@ const OrderScreen = ({ match }) => {
       const name = userInfo.name;
       const link = order.comprobantePago;
       const mensaje = `👋 Hola, mi nombre es ${name}.\n he comprar estos artículos: 💭 \n ${productos} \n Para pagar un total de 🔜 *${order.itemsPrice}$* \n \n   Adjunto link de  comprobante de pago por mis productos  \n \n  ${link}`;
-      const telefono = "+584245116397"; // Reemplaza con el número de teléfono al que quieres enviar el mensaje
+      const telefono = "+584125263763"; // Reemplaza con el número de teléfono al que quieres enviar el mensaje
       // const mensaje = "Hola, quiero hacer un pago"; // Reemplaza con el mensaje que quieres enviar
 
       // para enviar  orden a whatsapp

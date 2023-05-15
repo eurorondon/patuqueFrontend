@@ -1172,6 +1172,24 @@ svg {
   cursor: default;
 }
 
+.whatsapp {
+  max-width: 5rem;
+  position: fixed;
+  bottom: 10px;
+  right: 40px;
+  border: none;
+  background: none;
+}
+
+.whatsappResponsive {
+  max-width: 5rem;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+}
+
+
+
 
 
 @media only screen and (max-width: 992px) {
@@ -1179,6 +1197,9 @@ svg {
     /* width: 70%; */
     /* height: 200px; */
     /* padding: 0, 50px; */
+  }
+  .whatsapp { 
+    right: 40px;   
   }
 }
 
@@ -1253,6 +1274,9 @@ svg {
   .row-cols-lg-3 > div {
     flex: 0 0 33.33%;
     max-width: 33.33%;
+  }
+  .whatsapp { 
+    right: 15px;   
   }
 }
 
