@@ -1,5 +1,6 @@
 import React from "react";
 import CategoriaSelector from "./CategoriaSelector";
+import { Link as LinkScroll } from "react-scroll";
 
 const Menu = ({ setCurrentPage }) => {
   return (
@@ -11,41 +12,93 @@ const Menu = ({ setCurrentPage }) => {
               className="col text-center btn"
               style={{ fontWeight: "bold" }}
             >
-              TIENDA
+              <LinkScroll
+                className=""
+                activeClass=""
+                to="ShopSection"
+                spy={true}
+                smooth={true}
+                offset={-100}
+                duration={250}
+              >
+                TIENDA
+              </LinkScroll>
             </button>
 
             <button className="col text-center btn" style={{ fontWeight: "" }}>
               <CategoriaSelector setCurrentPage={setCurrentPage} />
             </button>
+
             <button
               className="col text-center btn"
               style={{ fontWeight: "bold" }}
             >
-              DESTACADOS
+              <LinkScroll
+                className=""
+                activeClass=""
+                to="Destacados"
+                spy={true}
+                smooth={true}
+                offset={-100}
+                duration={250}
+              >
+                DESTACADOS
+              </LinkScroll>
+            </button>
+
+            <button
+              className="col text-center btn"
+              style={{ fontWeight: "bold" }}
+            >
+              <LinkScroll
+                className=""
+                activeClass=""
+                to="Novedades"
+                spy={true}
+                smooth={true}
+                offset={-50}
+                duration={250}
+              >
+                NOVEDADES
+              </LinkScroll>
             </button>
             <button
               className="col text-center btn"
               style={{ fontWeight: "bold" }}
             >
-              NOVEDADES
+              <LinkScroll
+                className=""
+                activeClass=""
+                to="Ofertas"
+                spy={true}
+                smooth={true}
+                offset={-50}
+                duration={250}
+              >
+                OFERTAS
+              </LinkScroll>
             </button>
-            <button
-              className="col text-center btn"
-              style={{ fontWeight: "bold" }}
-            >
-              OFERTAS
-            </button>
-            <button
+            {/* <button
               className="col text-center btn"
               style={{ fontWeight: "bold" }}
             >
               OTROS
-            </button>
+            </button> */}
             <button
               className="col text-center btn"
               style={{ fontWeight: "bold" }}
             >
-              CONTACTANOS
+              <LinkScroll
+                className=""
+                activeClass=""
+                to="Footer"
+                spy={true}
+                smooth={true}
+                offset={-50}
+                duration={250}
+              >
+                CONTACTANOS
+              </LinkScroll>
             </button>
           </div>
         </div>

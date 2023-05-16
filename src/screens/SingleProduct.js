@@ -105,7 +105,6 @@ const SingleProduct = ({ history, match }) => {
             <button className="btn btn-primary mx-3" onClick={handleGoBack}>
               <div>
                 <Undo className="me-1" />
-                Atrás
               </div>
             </button>
             <div className="row">
