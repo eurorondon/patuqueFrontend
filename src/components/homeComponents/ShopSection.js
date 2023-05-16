@@ -160,27 +160,6 @@ const ShopSection = (props) => {
                           <h2 className="">Todos los productos </h2>
                         </div>
                       )}
-                      {/* <div>
-                        <select
-                          name="categoria"
-                          id=""
-                          onChange={handleCategoria}
-                        >
-                          <option disabled selected value="">
-                            {selectedCategory ? selectedCategory : "Categoria"}
-                          </option>
-
-                          <option value="Conservadores">Conservadores</option>
-                          <option value="Vasos">Vasos</option>
-                          <option value="Poncheras">Poncheras</option>
-                          <option value="Aluminio">Aluminio</option>
-                          <option value="Tobos">Tobos</option>
-                          <option value="Bigmark">Bigmark</option>
-                          <option value="Inplast">Inplast</option>
-                          <option value="Adonis">Adonis</option>
-                          <option value="IPM">IPM</option>
-                        </select>
-                      </div> */}
                     </div>
                   </>
                 ) : (
@@ -190,8 +169,11 @@ const ShopSection = (props) => {
                         Sin Resultados <Search style={{ fontSize: "2rem" }} />
                       </h2>
 
-                      <div className=" ">
-                        <p className="my-3" style={{ fontSize: "1.3rem" }}>
+                      <div className="mx-2">
+                        <p
+                          className="my-3 text-center"
+                          style={{ fontSize: "1.3rem" }}
+                        >
                           Puedes intentar con otro Nombre o buscar en alguna de
                           nuestras Categorias
                         </p>
@@ -233,12 +215,12 @@ const ShopSection = (props) => {
               <div
                 className={window.innerWidth > 1240 ? "ms-5  mt-4" : " mt-4"}
               >
-                <div className="d-flex  align-items-center justify-content-evenly  ">
+                <div className="d-flex flex-column align-items-center justify-content-evenly  ">
                   <h2 className="">
-                    <SearchOutlined /> {category}
+                    <SearchOutlined style={{ fontSize: "2rem" }} /> {category}
                   </h2>
 
-                  <div>
+                  <div className="mt-3">
                     <select name="categoria" id="" onChange={handleCategoria}>
                       <option disabled selected value="">
                         {selectedCategory ? selectedCategory : "Categoria"}
@@ -256,20 +238,25 @@ const ShopSection = (props) => {
               <Grid currentPosts={products} />
             ) : (
               <>
-                <div className="d-flex flex-column align-items-center my-2">
-                  <h2 className="mt-5">Categoria Agotada</h2>
-                </div>
-                <div>
-                  <img
-                    style={{
-                      width: "100%",
-                      height: "300px",
-                      objectFit: "contain",
-                    }}
-                    src="/images/not-found.png"
-                    alt="Not-found"
-                  />
-                </div>
+                {keyword ? null : (
+                  <>
+                    {" "}
+                    <div className="d-flex flex-column align-items-center my-2">
+                      <h2 className="mt-5">Categoria Agotada</h2>
+                    </div>
+                    <div>
+                      <img
+                        style={{
+                          width: "100%",
+                          height: "300px",
+                          objectFit: "contain",
+                        }}
+                        src="/images/not-found.png"
+                        alt="Not-found"
+                      />
+                    </div>
+                  </>
+                )}
               </>
             )}
           </>

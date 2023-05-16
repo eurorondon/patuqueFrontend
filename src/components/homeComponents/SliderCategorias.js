@@ -8,7 +8,7 @@ import { listProduct } from "../../Redux/Actions/ProductActions";
 import { listCategory } from "../../Redux/Actions/CategoryActions";
 
 const breakPoints = [
-  { width: 1, itemsToShow: 3 },
+  { width: 1, itemsToShow: 2, itemsToScroll: 2 },
   { width: 550, itemsToShow: 4 },
   { width: 768, itemsToShow: 4 },
   { width: 1200, itemsToShow: 4 },
@@ -70,9 +70,8 @@ const SliderCategorias = () => {
           }}
           onClick={() => seleccionarCategoria(item.categoria)}
         >
-          {console.log(item.categoria)}
           <div
-            className="  d-flex justify-content-center align-items-center rounded   "
+            className="  d-flex justify-content-center align-items-center rounded text-center   "
             style={{
               height: "50px",
               width: "100%",
@@ -109,14 +108,16 @@ const SliderCategorias = () => {
               Ver todos los productos
             </button>
           </LinkScroll>
-          <Carousel
-            breakPoints={breakPoints}
-            itemsToShow={3}
-            itemsToScroll={3}
-            renderArrow={customArrow}
-          >
-            {categoria}
-          </Carousel>
+          <div className="my-2">
+            <Carousel
+              breakPoints={breakPoints}
+              itemsToShow={3}
+              itemsToScroll={3}
+              renderArrow={customArrow}
+            >
+              {categoria}
+            </Carousel>
+          </div>
         </div>
       ) : null}
     </div>
