@@ -142,6 +142,7 @@ const PatuqueImage = ({ setCurrentPage }) => {
                   : { display: "none" }
               }
             />
+            {console.log(keyword)}
             {/* <button type="submit" className="search-button">
             Buscar
           </button> */}

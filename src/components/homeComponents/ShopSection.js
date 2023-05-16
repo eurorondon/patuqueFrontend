@@ -21,6 +21,9 @@ const ShopSection = (props) => {
   const productList = useSelector((state) => state.productList);
   const { loading, error, products, page, pages } = productList;
 
+  const categoriesList = useSelector((state) => state.categoryList);
+  const categorias = categoriesList.categories;
+
   const [selectedCategory, setSelectedCategory] = useState();
   const { category } = useParams();
 
@@ -199,21 +202,15 @@ const ShopSection = (props) => {
                             id=""
                             onChange={handleCategoria}
                           >
-                            <option disabled defaultValue="">
+                            <option disabled selected value="">
                               {selectedCategory
                                 ? selectedCategory
                                 : "Categoria"}
                             </option>
-
-                            <option value="Conservadores">Conservadores</option>
-                            <option value="Vasos">Vasos</option>
-                            <option value="Poncheras">Poncheras</option>
-                            <option value="Aluminio">Aluminio</option>
-                            <option value="Tobos">Tobos</option>
-                            <option value="Bigmark">Bigmark</option>
-                            <option value="Inplast">Inplast</option>
-                            <option value="Adonis">Adonis</option>
-                            <option value="IPM">IPM</option>
+                            <option value="">Todos</option>
+                            {categorias.map((item) => (
+                              <option>{item.categoria}</option>
+                            ))}
                           </select>
                         </div>
                       </div>
@@ -240,27 +237,41 @@ const ShopSection = (props) => {
                   <h2 className="">
                     <SearchOutlined /> {category}
                   </h2>
+
                   <div>
                     <select name="categoria" id="" onChange={handleCategoria}>
                       <option disabled selected value="">
                         {selectedCategory ? selectedCategory : "Categoria"}
                       </option>
                       <option value="">Todos</option>
-                      <option value="Conservadores">Conservadores</option>
-                      <option value="Vasos">Vasos</option>
-                      <option value="Poncheras">Poncheras</option>
-                      <option value="Aluminio">Aluminio</option>
-                      <option value="Tobos">Tobos</option>
-                      <option value="Bigmark">Bigmark</option>
-                      <option value="Inplast">Inplast</option>
-                      <option value="Adonis">Adonis</option>
-                      <option value="IPM">IPM</option>
+                      {categorias.map((item) => (
+                        <option>{item.categoria}</option>
+                      ))}
                     </select>
                   </div>
                 </div>
               </div>
             )}
-            <Grid currentPosts={products} />
+            {products?.length > 0 ? (
+              <Grid currentPosts={products} />
+            ) : (
+              <>
+                <div className="d-flex flex-column align-items-center my-2">
+                  <h2 className="mt-5">Categoria Agotada</h2>
+                </div>
+                <div>
+                  <img
+                    style={{
+                      width: "100%",
+                      height: "300px",
+                      objectFit: "contain",
+                    }}
+                    src="/images/not-found.png"
+                    alt="Not-found"
+                  />
+                </div>
+              </>
+            )}
           </>
         )}
 

@@ -3,8 +3,9 @@ import Carousel from "react-elastic-carousel";
 import { Link } from "react-router-dom";
 import { Link as LinkScroll } from "react-scroll";
 import { useHistory } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { listProduct } from "../../Redux/Actions/ProductActions";
+import { listCategory } from "../../Redux/Actions/CategoryActions";
 
 const breakPoints = [
   { width: 1, itemsToShow: 3 },
@@ -33,29 +34,6 @@ const customArrow = ({ type, onClick }) => (
   </div>
 );
 
-const categorias = [
-  {
-    nombre: "Labios",
-    id: 1,
-  },
-  {
-    nombre: "Bases",
-    id: 2,
-  },
-  {
-    nombre: "Brochas",
-    id: 3,
-  },
-  {
-    nombre: "Bronceador",
-    id: 4,
-  },
-  {
-    nombre: "Skin care",
-    id: 5,
-  },
-];
-
 const SliderCategorias = () => {
   const [category, setCategory] = useState("");
   const history = useHistory();
@@ -64,6 +42,13 @@ const SliderCategorias = () => {
   useEffect(() => {
     dispatch(listProduct("", "", category));
   }, [dispatch, category]);
+
+  useEffect(() => {
+    dispatch(listCategory());
+  }, [dispatch]);
+
+  const categoriesList = useSelector((state) => state.categoryList);
+  const categorias = categoriesList.categories;
 
   const seleccionarCategoria = (nombreCategoria) => {
     setCategory(nombreCategoria);
@@ -83,8 +68,9 @@ const SliderCategorias = () => {
             fontSize: "15px",
             fontWeight: "600",
           }}
-          onClick={() => seleccionarCategoria(item.nombre)}
+          onClick={() => seleccionarCategoria(item.categoria)}
         >
+          {console.log(item.categoria)}
           <div
             className="  d-flex justify-content-center align-items-center rounded   "
             style={{
@@ -95,7 +81,7 @@ const SliderCategorias = () => {
               margin: "0 2px",
             }}
           >
-            {item.nombre}
+            {item.categoria}
           </div>
         </div>
       ))

@@ -1,5 +1,6 @@
 import { MenuOpen } from "@material-ui/icons";
 import React, { useState } from "react";
+import { useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 
 function CategoriaSelector({ setCurrentPage }) {
@@ -9,7 +10,9 @@ function CategoriaSelector({ setCurrentPage }) {
 
   let history = useHistory();
 
-  const categorias = ["Labios", "Aluminio", "Vasos", "Poncheras"];
+  const categoriesList = useSelector((state) => state.categoryList);
+
+  const categorias = categoriesList.categories;
 
   const handleCategoriaSeleccionada = (categoriaSeleccionada) => {
     setMostrarCategorias(false);
@@ -50,13 +53,13 @@ function CategoriaSelector({ setCurrentPage }) {
 
       {mostrarCategorias && (
         <ul className="categorias-list">
-          {categorias.map((categoria) => (
+          {categorias.map((item) => (
             <li
               key={categoria}
               className="categorias-list-item"
-              onClick={() => handleCategoriaSeleccionada(categoria)}
+              onClick={() => handleCategoriaSeleccionada(item.categoria)}
             >
-              {categoria}
+              {item.categoria}
             </li>
           ))}
         </ul>

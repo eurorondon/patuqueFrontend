@@ -1,68 +1,13 @@
 import React, { useState } from "react";
+import { useSelector } from "react-redux";
 import { Link, useHistory } from "react-router-dom";
 import { Link as LinkScroll } from "react-scroll";
 
-const categorias = [
-  {
-    title: "Skin care ",
-    id: 1,
-  },
-  {
-    title: "Bases",
-    id: 2,
-  },
-  {
-    title: "Brochas",
-    id: 3,
-  },
-  {
-    title: "Bronzer y contornos ",
-    id: 4,
-  },
-  {
-    title: "Cejas ",
-    id: 5,
-  },
-  {
-    title: "Correctores",
-    id: 6,
-  },
-  {
-    title: "Delineadores",
-    id: 7,
-  },
-  {
-    title: "Iluminadores",
-    id: 8,
-  },
-  {
-    title: "Labiales",
-    id: 9,
-  },
-  {
-    title: "Máscara de pestañas",
-    id: 10,
-  },
-  {
-    title: "Paletas de sombras ",
-    id: 11,
-  },
-  {
-    title: "Rubores",
-    id: 12,
-  },
-  {
-    title: "Polvos compactos y suelto",
-    id: 13,
-  },
-  {
-    title: "Otros",
-    id: 14,
-  },
-];
-
 const Navbar = ({ setCurrentPage, currentPath }) => {
   let history = useHistory();
+
+  const categoriesList = useSelector((state) => state.categoryList);
+  const categorias = categoriesList.categories;
 
   const [categoria, setCategoria] = useState("");
   const [selectedCategory, setSelectedCategory] = useState();
@@ -167,9 +112,11 @@ const Navbar = ({ setCurrentPage, currentPath }) => {
                   {categorias.map((item) => (
                     <a
                       className="dropdown-item"
-                      onClick={() => handleCategoriaSeleccionada(item.title)}
+                      onClick={() =>
+                        handleCategoriaSeleccionada(item.categoria)
+                      }
                     >
-                      {item.title}
+                      {item.categoria}
                     </a>
                   ))}
                 </div>

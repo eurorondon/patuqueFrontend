@@ -37,7 +37,6 @@ const HomeScreen = ({ match }) => {
           <button className="btn btn-primary" onClick={handleGoBack}>
             <div>
               <Undo className="mx-1" />
-              Atrás
             </div>
           </button>
         </div>
