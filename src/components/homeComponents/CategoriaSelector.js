@@ -34,7 +34,7 @@ function CategoriaSelector({ setCurrentPage }) {
 
   return (
     <div
-      className="categorias-container  button-desplegable  rounded  "
+      className="categorias-container button-desplegable  rounded  "
       onClick={handleMostrarCategorias}
     >
       <div
@@ -45,14 +45,16 @@ function CategoriaSelector({ setCurrentPage }) {
           cursor: "pointer",
         }}
       >
-        <div className="d-flex justify-content-center text-white  ">
+        <div className="d-flex justify-content-center  ">
           <MenuOpen />
-          <span>Categorías</span>
+          <span className="" style={{ fontWeight: "bold" }}>
+            CATEGORIAS
+          </span>
         </div>
       </div>
 
       {mostrarCategorias && (
-        <ul className="categorias-list">
+        <ul className="categorias-list  text-black">
           {categorias.map((item) => (
             <li
               key={categoria}

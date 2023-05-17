@@ -31,10 +31,7 @@ const HomeScreen = ({ match }) => {
   return (
     <div className="" style={{ backgroundColor: "" }}>
       <div className=" whatsapp ">
-        <a
-          className=""
-          href="https://api.whatsapp.com/send?phone=65255567&text=Hola,%20te%20saluda%20Juan%20Severino,%20c%C3%B3mo%20puedo%20ayudarte"
-        >
+        <a className="" href="https://wa.me/message/T53QKXRSLJE3B1">
           <img
             className="  "
             src="/images/whatsapp.png"

@@ -15,12 +15,12 @@ const categorias = [
   {
     nombre: "Aseosorias",
     imagen: "/images/asesorias.png",
-    link: "https://www.whatsapp.com/?lang=es",
+    link: "https://wa.me/message/T53QKXRSLJE3B1",
   },
   {
     nombre: "Aprende",
     imagen: "/images/aprende.png",
-    link: "https://www.instagram.com/",
+    link: "https://instagram.com/patuquee?igshid=YmMyMTA2M2Y=",
   },
 ];
 

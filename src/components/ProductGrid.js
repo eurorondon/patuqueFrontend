@@ -54,7 +54,7 @@ export default function Product(props) {
           )}
         </div>
 
-        <p className="price" style={{ fontWeight: "bold" }}>
+        <p className="price" style={{ fontWeight: "" }}>
           {props.price} $
         </p>
         {/* <p>

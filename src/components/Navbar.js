@@ -61,7 +61,7 @@ const Navbar = ({ setCurrentPage, currentPath }) => {
             className="text-center mx-auto text-white"
             style={{ fontSize: "clamp(0.9rem, 3.5vw, 1.2rem)" }}
           >
-            CONTACTANOS +58 412 5263763
+            CONTACTANOS +58 0412-2647326
           </h3>
 
           <div
@@ -111,7 +111,7 @@ const Navbar = ({ setCurrentPage, currentPath }) => {
                 <div className="dropdown-menu" aria-labelledby="navbarDropdown">
                   {categorias.map((item) => (
                     <a
-                      className="dropdown-item"
+                      className="dropdown-item "
                       onClick={() =>
                         handleCategoriaSeleccionada(item.categoria)
                       }

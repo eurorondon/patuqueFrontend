@@ -52,12 +52,7 @@ export default function Product(props) {
           )}
         </div>
 
-        <p
-          className="price text-center "
-          style={{ fontWeight: "bold", paddingTop: "" }}
-        >
-          {props.price} $
-        </p>
+        <p className="price text-center ">{props.price} $</p>
       </div>
       <div className=" d-flex justify-content-center">
         <div

@@ -186,18 +186,17 @@ textarea:focus {
 }
 
 .button-desplegable {
-  border: none;
-  background-color: #000000;
-  border-radius: 5px;
-  padding: 5px;
-  margin: 0;
+  
   cursor: pointer;
   font-size: inherit;
+ 
 }
 
 .button-desplegable:hover {
-  background-color: #007bff;
+
   /* padding: 8px; */
+   background-color: #6768A9;
+   color: white;
   transition: 0.5s;
 }
 
@@ -1218,6 +1217,38 @@ svg {
 .categorias-list::-webkit-scrollbar-thumb:hover {
   background-color: #555; /* Color del pulgar de la barra de scroll al pasar el cursor */
 }
+
+/* menu desplegable navbar  */
+
+.dropdown-menu {
+  background-color: #D8D8F0 !important; /* Color de fondo del menú desplegable */
+  border: none; /* Borde del menú desplegable */
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Sombra del menú desplegable */
+  
+}
+
+/* .dropdown-item{
+  color: black !important;
+} */
+
+.dropdown-menu a {
+  color: #6768A9 !important; /* Color de texto de los elementos del menú desplegable */
+}
+
+.dropdown-menu a:hover {
+  background-color: #f8f8f8 !important; /* Color de fondo al pasar el cursor sobre los elementos del menú desplegable */
+  color: #000000 !important; /* Color de texto al pasar el cursor sobre los elementos del menú desplegable */
+}
+
+.dropdown-item.active,
+.dropdown-item:active {
+  background-color: #f8f8f8; /* Color de fondo del elemento activo del menú desplegable */
+}
+
+
+
+
+
 
 
 

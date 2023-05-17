@@ -25,7 +25,7 @@ const Menu = ({ setCurrentPage }) => {
               </LinkScroll>
             </button>
 
-            <button className="col text-center btn" style={{ fontWeight: "" }}>
+            <button className="col text-center btn " style={{ fontWeight: "" }}>
               <CategoriaSelector setCurrentPage={setCurrentPage} />
             </button>
 
