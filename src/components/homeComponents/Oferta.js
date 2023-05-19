@@ -81,54 +81,7 @@ const Oferta = (props) => {
                       )}
                     </div>
                   </>
-                ) : (
-                  <>
-                    <div className="d-flex flex-column align-items-center my-2">
-                      <h2>
-                        Sin Resultados <Search style={{ fontSize: "2rem" }} />
-                      </h2>
-                      <div className=" ">
-                        <p className="my-3" style={{ fontSize: "1.3rem" }}>
-                          Puedes intentar con otro Nombre o buscar en alguna de
-                          nuestras Categorias
-                        </p>
-                        <div className=" d-flex justify-content-center mt-3">
-                          <select
-                            name="categoria"
-                            id=""
-                            onChange={handleCategoria}
-                          >
-                            <option disabled defaultValue="">
-                              {selectedCategory
-                                ? selectedCategory
-                                : "Categoria"}
-                            </option>
-                            <option value="Conservadores">Conservadores</option>
-                            <option value="Vasos">Vasos</option>
-                            <option value="Poncheras">Poncheras</option>
-                            <option value="Aluminio">Aluminio</option>
-                            <option value="Tobos">Tobos</option>
-                            <option value="Bigmark">Bigmark</option>
-                            <option value="Inplast">Inplast</option>
-                            <option value="Adonis">Adonis</option>
-                            <option value="IPM">IPM</option>
-                          </select>
-                        </div>
-                      </div>
-                    </div>
-                    <div>
-                      <img
-                        style={{
-                          width: "100%",
-                          height: "300px",
-                          objectFit: "contain",
-                        }}
-                        src="/images/not-found.png"
-                        alt="Not-found"
-                      />
-                    </div>
-                  </>
-                )}
+                ) : null}
               </div>
             ) : (
               <div
