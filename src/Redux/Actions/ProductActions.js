@@ -106,7 +106,10 @@ export const listProductCategoria2 =
         dispatch({ type: PRODUCT_LIST_CATEGORIA2_SUCCESS, payload: data });
       } else {
         const { data } = await axios.get(
-          `${URL}/api/products?&pageNumber=${pageNumber}&category=${category}`
+          `${URL}/api/products?&pageNumber=${pageNumber}&category=${category}`,
+          console.log(
+            `${URL}/api/products?&pageNumber=${pageNumber}&category=${category}`
+          )
         );
         dispatch({ type: PRODUCT_LIST_CATEGORIA2_SUCCESS, payload: data });
       }

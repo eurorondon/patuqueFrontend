@@ -43,9 +43,7 @@ const PatuqueImage = ({ setCurrentPage }) => {
             style={{ position: "absolute", left: "150px", top: "35%" }}
           >
             <LocationOn />
-            <p className="">
-              Calle20 entre carreras 22 y 23, <br /> Barquisimeto- Edo, Lara
-            </p>
+            <p className="">Barquisimeto- Edo, Lara</p>
           </div>
         )}
 

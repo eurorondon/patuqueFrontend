@@ -42,8 +42,8 @@ const Footer = () => {
                   }`}
                 >
                   <p>
-                    <i className="fas fa-home me-3"></i> Calle 20 entre carreras
-                    22 y 23, Barquisimeto 3001
+                    <i className="fas fa-home me-3"></i> Barquisimeto, Edo Lara
+                    3001
                   </p>
                   <p>
                     <i className="fas fa-envelope me-3"></i> Patuquee@gmail.com

@@ -58,7 +58,7 @@ const Announcement = () => {
           </div>
           <div className="text-white row ">
             <div className="col d-flex justify-content-center aling-items-center gap-5 ">
-              <p>CONTACTANOS +58 412 5263763</p>
+              <p>CONTACTANOS +58 0412-2647326</p>
             </div>
           </div>
         </div>
