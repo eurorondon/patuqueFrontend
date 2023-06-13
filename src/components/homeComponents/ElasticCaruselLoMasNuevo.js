@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import Product from "../Product";
+import Product from "../ProductNew";
 import { useDispatch, useSelector } from "react-redux";
 import { listProductCategoria1 } from "../../Redux/Actions/ProductActions";
 import { Link } from "react-router-dom";
